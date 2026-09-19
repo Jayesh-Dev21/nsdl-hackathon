@@ -237,6 +237,17 @@ button { cursor: crosshair; }
 .nav-link:hover { color: var(--purple-blue); }
 .nav-link:hover::after { width: 100%; }
 
+/* ─── Grid Utilities ────────────────────────────────────────── */
+.grid-280 { display: grid; grid-template-columns: 280px 1fr; }
+.grid-halves { display: grid; grid-template-columns: 1fr 1fr; }
+.grid-thirds { display: grid; grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 900px) {
+  .grid-280, .grid-halves, .grid-thirds {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ─── Typography ────────────────────────────────────────────── */
 .display-xl {
   font-family: var(--font-display);

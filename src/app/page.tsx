@@ -514,7 +514,7 @@ export default function Home() {
 
       {/* ── ABOUT ──────────────────────────────────────────────── */}
       <section id="about" className="section">
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px 60px" }}>
+        <div className="grid-halves" style={{ gap: "80px 60px" }}>
           {/* Left */}
           <div>
             <div className="mono-label" style={{ marginBottom: 24 }}>01 / The Challenge</div>
@@ -567,7 +567,7 @@ export default function Home() {
 
       {/* ── GUARDRAILS ─────────────────────────────────────────── */}
       <section style={{ padding: "80px 40px", maxWidth: 1400, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: 60 }}>
+        <div className="grid-280" style={{ gap: 60 }}>
           <div>
             <div className="mono-label" style={{ marginBottom: 24 }}>03 / Constraints</div>
             <h2 className="display-md" style={{ color: "var(--red)", marginBottom: 16 }}>WHAT NOT TO BUILD</h2>
@@ -629,7 +629,7 @@ export default function Home() {
 
       {/* ── TIMELINE ───────────────────────────────────────────── */}
       <section id="timeline" className="section">
-        <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: 60 }}>
+        <div className="grid-280" style={{ gap: 60 }}>
           <div>
             <div className="mono-label" style={{ marginBottom: 24 }}>05 / Schedule</div>
             <h2 className="display-md" style={{ marginBottom: 16 }}>HACKATHON<br /><span className="amber">TIMELINE</span></h2>
@@ -660,7 +660,7 @@ export default function Home() {
           <br />
           <span className="outline-text">RECOGNITION</span>
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "var(--amber-border)", marginBottom: 32 }}>
+        <div className="grid-thirds" style={{ gap: 1, background: "var(--amber-border)", marginBottom: 32 }}>
           {[
             { rank: "01", label: "1st Place", glyph: "◈", accent: "var(--amber)" },
             { rank: "02", label: "2nd Place", glyph: "◇", accent: "rgba(248,244,236,0.5)" },
@@ -703,7 +703,7 @@ export default function Home() {
 
       {/* ── EVALUATION ─────────────────────────────────────────── */}
       <section id="evaluation" style={{ padding: "120px 40px" }}>
-        <div style={{ maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "280px 1fr", gap: 60 }}>
+        <div className="grid-280" style={{ maxWidth: 1400, margin: "0 auto", gap: 60 }}>
           <div>
             <div className="mono-label" style={{ marginBottom: 24 }}>07 / Judging</div>
             <h2 className="display-md" style={{ marginBottom: 16 }}>EVALUATION<br /><span className="amber">CRITERIA</span></h2>
@@ -720,7 +720,7 @@ export default function Home() {
 
       {/* ── SUBMISSION ─────────────────────────────────────────── */}
       <section id="submission" className="section">
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60 }}>
+        <div className="grid-halves" style={{ gap: 60 }}>
           {/* Submit */}
           <div>
             <div className="mono-label" style={{ marginBottom: 24 }}>08 / Submission</div>
@@ -776,7 +776,7 @@ export default function Home() {
 
       {/* ── FAQ ────────────────────────────────────────────────── */}
       <section id="faq" className="section">
-        <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: 60 }}>
+        <div className="grid-280" style={{ gap: 60 }}>
           <div>
             <div className="mono-label" style={{ marginBottom: 24 }}>10 / FAQ</div>
             <h2 className="display-md" style={{ marginBottom: 0 }}>COMMON<br /><span className="amber">QUESTIONS</span></h2>
