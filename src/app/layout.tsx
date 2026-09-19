@@ -15,11 +15,11 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "SURAKSHA — Investor Resilience Hackathon | COPS IIT BHU × SEBI × NSDL",
+  title: "SANGYAN — Investor Resilience Hackathon | COPS IIT BHU × SEBI × NSDL",
   description:
-    "SURAKSHA is a national 7-day hackathon organised by Club of ProgrammerS (COPS), IIT (BHU) Varanasi in collaboration with SEBI and NSDL. Build technology that helps Indians become harder to fool, safer, and more resilient in their financial decisions.",
+    "SANGYAN is a national 7-day hackathon organised by Club of ProgrammerS (COPS), IIT (BHU) Varanasi in collaboration with SEBI and NSDL. Build technology that helps Indians become harder to fool, safer, and more resilient in their financial decisions.",
   keywords: [
-    "SURAKSHA hackathon",
+    "SANGYAN hackathon",
     "NSDL hackathon",
     "SEBI hackathon",
     "IIT BHU hackathon",
@@ -39,16 +39,16 @@ export const metadata: Metadata = {
     shortcut: "/favicon-32.png",
   },
   openGraph: {
-    title: "SURAKSHA — Investor Resilience Hackathon",
+    title: "SANGYAN — Investor Resilience Hackathon",
     description:
       "A national hackathon to build tech that protects Indian investors. Organised by COPS IIT BHU in collaboration with SEBI & NSDL.",
     type: "website",
     locale: "en_IN",
-    siteName: "SURAKSHA Hackathon",
+    siteName: "SANGYAN Hackathon",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SURAKSHA — Investor Resilience Hackathon | COPS IIT BHU",
+    title: "SANGYAN — Investor Resilience Hackathon | COPS IIT BHU",
     description:
       "Build technology to protect Indian investors. National hackathon by COPS IIT BHU × SEBI × NSDL.",
   },

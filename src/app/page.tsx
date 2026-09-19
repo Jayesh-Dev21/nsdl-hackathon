@@ -91,13 +91,13 @@ const IconWarning = ({ size = 14, color = "currentColor" }: { size?: number; col
 );
 
 /* ─────────────────────────────────────────────────────────────────
-   SURAKSHA — Financial Terminal × Brutalist Editorial
+   SANGYAN — Financial Terminal × Brutalist Editorial
    Hackathon by COPS & SNTC, IIT BHU × SEBI × NSDL
    ───────────────────────────────────────────────────────────────── */
 
 /* ── Ticker data ─────────────────────────────────────────────── */
 const TICKER_ITEMS = [
-  { sym: "SURAKSHA", val: "OPEN", chg: "+∞", dir: "up" },
+  { sym: "SANGYAN", val: "OPEN", chg: "+∞", dir: "up" },
   { sym: "FRAUD.INDEX", val: "₹12,000CR", chg: "DAILY LOSS", dir: "down" },
   { sym: "DEMAT.ACC", val: "16CR+", chg: "+22% YOY", dir: "up" },
   { sym: "F&O.LOSERS", val: "9/10", chg: "SEBI DATA", dir: "down" },
@@ -268,7 +268,7 @@ function TrackPanel({ t }: { t: typeof TRACKS[0] }) {
   return (
     <div
       className="data-panel"
-      style={{ cursor: "crosshair" }}
+      style={{ cursor: "crosshair", height: "100%" }}
       onClick={() => setOpen(o => !o)}
       id={`track-${t.id.toLowerCase()}`}
     >
@@ -359,7 +359,7 @@ export default function Home() {
       <nav className={`nav ${scrolled ? "scrolled" : ""}`} id="nav">
         <a href="#hero" className="nav-logo" style={{ gap: 10 }}>
           <IconShield size={18} color="var(--amber)" />
-          SURAKSHA
+          SANGYAN
         </a>
         <div className="nav-links">
           {["About", "Tracks", "Timeline", "Prizes", "FAQ"].map(l => (
@@ -436,7 +436,7 @@ export default function Home() {
               className="display-xl outline-text"
               style={{ display: "block", marginBottom: 4, animation: "fade-up 0.7s ease both" }}
             >
-              SURAKSHA
+              SANGYAN
             </div>
             <div
               className="display-xl amber-fill"
@@ -618,7 +618,7 @@ export default function Home() {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 1, background: "var(--amber-border)" }}>
           {TRACKS.map(t => (
-            <div key={t.id} style={{ background: "var(--black)" }}>
+            <div key={t.id} style={{ background: "var(--black)", height: "100%" }}>
               <TrackPanel t={t} />
             </div>
           ))}
@@ -881,7 +881,7 @@ export default function Home() {
         background: "var(--black)",
       }}>
         <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "var(--white-muted)" }}>
-          <span style={{ color: "var(--amber)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.85rem" }}>[SURAKSHA]</span>
+          <span style={{ color: "var(--amber)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.85rem" }}>[SANGYAN]</span>
           {" "}· Investor Resilience Hackathon 2026
         </div>
         <div style={{ display: "flex", gap: 24 }}>

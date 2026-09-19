@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://suraksha.copsiitbhu.co.in/sitemap.xml
-Host: https://suraksha.copsiitbhu.co.in
+Sitemap: https://sangyan.copsiitbhu.co.in/sitemap.xml
+Host: https://sangyan.copsiitbhu.co.in
