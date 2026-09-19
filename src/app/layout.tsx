@@ -1,0 +1,79 @@
+import type { Metadata } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "SURAKSHA — Investor Resilience Hackathon | COPS IIT BHU × SEBI × NSDL",
+  description:
+    "SURAKSHA is a national 7-day hackathon organised by Club of ProgrammerS (COPS), IIT (BHU) Varanasi in collaboration with SEBI and NSDL. Build technology that helps Indians become harder to fool, safer, and more resilient in their financial decisions.",
+  keywords: [
+    "SURAKSHA hackathon",
+    "NSDL hackathon",
+    "SEBI hackathon",
+    "IIT BHU hackathon",
+    "COPS IIT BHU",
+    "investor resilience",
+    "fintech hackathon India",
+    "financial literacy hackathon",
+    "SNTC IIT BHU",
+  ],
+  authors: [{ name: "Club of ProgrammerS (COPS), IIT (BHU) Varanasi" }],
+  icons: {
+    icon: [
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/favicon-32.png",
+  },
+  openGraph: {
+    title: "SURAKSHA — Investor Resilience Hackathon",
+    description:
+      "A national hackathon to build tech that protects Indian investors. Organised by COPS IIT BHU in collaboration with SEBI & NSDL.",
+    type: "website",
+    locale: "en_IN",
+    siteName: "SURAKSHA Hackathon",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SURAKSHA — Investor Resilience Hackathon | COPS IIT BHU",
+    description:
+      "Build technology to protect Indian investors. National hackathon by COPS IIT BHU × SEBI × NSDL.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html
+      lang="en"
+      className={`${inter.variable} ${spaceGrotesk.variable}`}
+    >
+      <head>
+        <link rel="canonical" href="https://hackathon.copsiitbhu.co.in" />
+        <meta name="theme-color" content="#0d0f14" />
+      </head>
+      <body className="min-h-screen flex flex-col antialiased">{children}</body>
+    </html>
+  );
+}
