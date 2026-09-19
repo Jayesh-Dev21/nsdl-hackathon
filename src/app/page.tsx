@@ -158,7 +158,7 @@ const TRACKS = [
   },
   {
     id: "B", code: "TRK-B",
-    color: "#F5A623",
+    color: "#ffffff",
     title: "Investor Awareness, Rights & Grievance",
     focus: "Making investor rights, protections, and complaint mechanisms usable by a first-time user.",
     ideas: ["Grievance Assistant", "Nominee & Family Wealth Tracker", "Rights & Process Navigator"],
@@ -186,7 +186,7 @@ const TRACKS = [
   },
   {
     id: "OPEN", code: "TRK-∅",
-    color: "#F5A623",
+    color: "#ffffff",
     title: "Open Innovation for Investor Resilience",
     focus: "Any software solution that meaningfully strengthens investor resilience is welcome here.",
     ideas: ["Accessibility-first tools for elderly/low-literacy investors", "Offline / USSD / IVR solutions", "DigiLocker & Account Aggregator integrations"],
@@ -418,7 +418,7 @@ export default function Home() {
           position: "absolute", right: -40, top: "50%", transform: "translateY(-50%)",
           fontFamily: "var(--font-display)", fontWeight: 800,
           fontSize: "clamp(180px, 25vw, 340px)",
-          color: "rgba(245,166,35,0.04)",
+          color: "rgba(255,255,255,0.04)",
           lineHeight: 1, userSelect: "none", pointerEvents: "none",
           letterSpacing: "-0.04em",
         }}>2026</div>
@@ -503,7 +503,7 @@ export default function Home() {
             { v: "TOP 3", l: "Awards", s: "Prizes TBA" },
             { v: "FREE", l: "To Enter", s: "No fee" },
           ].map((s, i) => (
-            <div key={i} className="stat-cell" style={{ borderRight: i < 5 ? "1px solid rgba(245,166,35,0.1)" : "none" }}>
+            <div key={i} className="stat-cell" style={{ borderRight: i < 5 ? "1px solid rgba(255,255,255,0.1)" : "none" }}>
               <div className="stat-value">{s.v}</div>
               <div className="stat-label">{s.l}</div>
               <div className="stat-sub">{s.s}</div>
@@ -675,7 +675,7 @@ export default function Home() {
               <div style={{ fontFamily: "var(--font-mono)", fontSize: "2.5rem", color: p.accent, marginBottom: 12, opacity: 0.8 }}>{p.glyph}</div>
               <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "3rem", color: p.accent, marginBottom: 8 }}>TBA</div>
               <div className="mono-label" style={{ color: "var(--white-muted)" }}>{p.label}</div>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "rgba(245,166,35,0.4)", marginTop: 8 }}>To be announced</div>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", marginTop: 8 }}>To be announced</div>
             </div>
           ))}
         </div>
@@ -736,7 +736,7 @@ export default function Home() {
               ].map(([code, label, desc]) => (
                 <div key={code} style={{
                   display: "grid", gridTemplateColumns: "60px 1fr",
-                  gap: 16, borderBottom: "1px solid rgba(245,166,35,0.08)", padding: "16px 0",
+                  gap: 16, borderBottom: "1px solid rgba(255,255,255,0.08)", padding: "16px 0",
                 }}>
                   <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", fontWeight: 700, color: "var(--amber)", paddingTop: 2 }}>{code}</div>
                   <div>
@@ -799,7 +799,7 @@ export default function Home() {
             <div style={{ width: 100, height: 60, position: "relative", opacity: 0.9 }}>
               <Image src="/cops-logo.png" alt="COPS IIT BHU" fill style={{ objectFit: "contain" }} />
             </div>
-            <div style={{ display: "inline-block", border: "1px solid rgba(245,166,35,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Organiser</div>
+            <div style={{ display: "inline-block", border: "1px solid rgba(255,255,255,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Organiser</div>
           </div>
 
           {/* SNTC — uses sntc-logo.png if present, else text fallback */}
@@ -808,7 +808,7 @@ export default function Home() {
               <Image src="/sntc-logo.png" alt="SNTC IIT BHU" fill style={{ objectFit: "contain" }}
                 onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
             </div>
-            <div style={{ display: "inline-block", border: "1px solid rgba(245,166,35,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Organiser</div>
+            <div style={{ display: "inline-block", border: "1px solid rgba(255,255,255,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Organiser</div>
           </div>
 
           {/* SEBI — real logo */}
@@ -816,7 +816,7 @@ export default function Home() {
             <div style={{ width: 100, height: 60, position: "relative" }}>
               <Image src="/sebi.png" alt="SEBI" fill style={{ objectFit: "contain" }} />
             </div>
-            <div style={{ display: "inline-block", border: "1px solid rgba(245,166,35,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Collaboration</div>
+            <div style={{ display: "inline-block", border: "1px solid rgba(255,255,255,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Collaboration</div>
           </div>
 
           {/* NSDL */}
@@ -824,7 +824,7 @@ export default function Home() {
             <div style={{ width: 120, height: 60, position: "relative" }}>
               <Image src="/nsdl.svg" alt="NSDL" fill style={{ objectFit: "contain" }} />
             </div>
-            <div style={{ display: "inline-block", border: "1px solid rgba(245,166,35,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Collaboration</div>
+            <div style={{ display: "inline-block", border: "1px solid rgba(255,255,255,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Collaboration</div>
           </div>
 
         </div>
@@ -842,7 +842,7 @@ export default function Home() {
         {/* Decorative cross-hair */}
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
-          backgroundImage: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(245,166,35,0.06) 0%, transparent 70%)",
+          backgroundImage: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 70%)",
         }} />
         <div style={{ position: "relative", maxWidth: 700, margin: "0 auto" }}>
           <div className="mono-label" style={{ marginBottom: 24 }}>Ready to Build?</div>
@@ -871,7 +871,7 @@ export default function Home() {
 
       {/* ── FOOTER ─────────────────────────────────────────────── */}
       <footer style={{
-        borderTop: "1px solid rgba(245,166,35,0.12)",
+        borderTop: "1px solid rgba(255,255,255,0.12)",
         padding: "32px 40px",
         display: "flex",
         justifyContent: "space-between",
@@ -895,7 +895,7 @@ export default function Home() {
             >{l}</a>
           ))}
         </div>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "rgba(245,166,35,0.4)" }}>
+        <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "rgba(255,255,255,0.4)" }}>
           © 2026 COPS & SNTC, IIT (BHU) · SEBI · NSDL
         </div>
       </footer>
