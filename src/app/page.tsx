@@ -546,10 +546,10 @@ export default function Home() {
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "var(--amber-border)" }}>
               {[
-                { Icon: IconAlert,  label: "Detect Fraud",   color: "var(--red)" },
-                { Icon: IconBook,   label: "Educate Simply", color: "var(--green)" },
-                { Icon: IconBrain,  label: "Build Habits",   color: "var(--amber)" },
-                { Icon: IconScale,  label: "Know Rights",    color: "var(--blue-data)" },
+                { Icon: IconAlert, label: "Detect Fraud", color: "var(--red)" },
+                { Icon: IconBook, label: "Educate Simply", color: "var(--green)" },
+                { Icon: IconBrain, label: "Build Habits", color: "var(--amber)" },
+                { Icon: IconScale, label: "Know Rights", color: "var(--blue-data)" },
               ].map(c => (
                 <div key={c.label} style={{ background: "var(--black-2)", padding: "22px 18px" }}>
                   <div style={{ marginBottom: 10, color: c.color, lineHeight: 0 }}>
@@ -683,10 +683,10 @@ export default function Home() {
         {/* Benefits */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 1, background: "var(--amber-border)" }}>
           {[
-            { Icon: IconCert,    label: "Participation Certs", desc: "Signed by IIT BHU for all participants" },
-            { Icon: IconGift,    label: "Gifts",                desc: "Goodies for all Techathon participants" },
-            { Icon: IconNews,    label: "Media Coverage",       desc: "Winners featured in national publications" },
-            { Icon: IconNetwork, label: "Network",              desc: "Direct access to SEBI & NSDL officials" },
+            { Icon: IconCert, label: "Participation Certs", desc: "Signed by IIT BHU for all participants" },
+            { Icon: IconGift, label: "Gifts", desc: "Goodies for all Techathon participants" },
+            { Icon: IconNews, label: "Media Coverage", desc: "Winners featured in national publications" },
+            { Icon: IconNetwork, label: "Network", desc: "Direct access to SEBI & NSDL officials" },
           ].map(b => (
             <div key={b.label} style={{ background: "var(--black-2)", padding: "24px 18px" }}>
               <div style={{ marginBottom: 12, color: "var(--amber)", lineHeight: 0 }}>
@@ -792,7 +792,7 @@ export default function Home() {
       {/* ── ORGS ───────────────────────────────────────────────── */}
       <section style={{ padding: "80px 40px", maxWidth: 1400, margin: "0 auto" }}>
         <div className="mono-label" style={{ marginBottom: 32, textAlign: "center" }}>Organised by & In collaboration with</div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "var(--amber-border)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 1, background: "var(--amber-border)" }}>
 
           {/* COPS — cops-logo.png, white outline on dark */}
           <div style={{ background: "var(--black-2)", padding: "32px 24px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
@@ -809,6 +809,14 @@ export default function Home() {
                 onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
             </div>
             <div style={{ display: "inline-block", border: "1px solid rgba(245,166,35,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Organiser</div>
+          </div>
+
+          {/* SEBI — real logo */}
+          <div style={{ background: "var(--black-2)", padding: "32px 24px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
+            <div style={{ width: 100, height: 60, position: "relative" }}>
+              <Image src="/sebi.png" alt="SEBI" fill style={{ objectFit: "contain" }} />
+            </div>
+            <div style={{ display: "inline-block", border: "1px solid rgba(245,166,35,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Collaboration</div>
           </div>
 
           {/* NSDL */}
@@ -888,7 +896,7 @@ export default function Home() {
           ))}
         </div>
         <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "rgba(245,166,35,0.4)" }}>
-          © 2026 COPS & SNTC, IIT (BHU) · NSDL
+          © 2026 COPS & SNTC, IIT (BHU) · SEBI · NSDL
         </div>
       </footer>
     </div>
