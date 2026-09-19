@@ -452,8 +452,8 @@ export default function Home() {
             animation: "fade-up 0.7s 0.2s ease both",
           }}>
             <p className="serif-quote" style={{ marginBottom: 16 }}>
-              "The objective is not to help users earn more money — it is to help them{" "}
-              <em>lose less, understand more, behave better, and decide more safely.</em>"
+              "The objective is to help users{" "}
+              <em>lose less, decide rationally, and understand what they are getting into.</em>"
             </p>
             <p className="mono-body">
               Organised by <span style={{ color: "var(--amber)" }}>COPS & SNTC, IIT (BHU) Varanasi</span>
