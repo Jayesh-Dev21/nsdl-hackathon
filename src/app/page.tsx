@@ -218,7 +218,7 @@ const FAQS = [
   { q: "Is there a registration fee?", a: "No. Participation is completely free." },
   { q: "Do we need financial domain expertise?", a: "No. Curiosity, empathy for the target user, and ability to build a working prototype are sufficient. The orientation session will help you align." },
   { q: "Can we use AI/ML models and third-party APIs?", a: "Yes. Any open-source or commercially available technology is allowed. Disclose third-party components in your submission." },
-  { q: "Will all participants receive certificates?", a: "Yes. All participants will receive a participation certificate signed by IIT BHU." },
+  { q: "Will all participants receive certificates?", a: "Yes. All participants will receive a participation certificate." },
   { q: "Who owns the IP of submissions?", a: "All intellectual property in submissions vests solely in NSDL upon submission, per the Terms & Conditions." },
   { q: "What is the final presentation format?", a: "Shortlisted teams present before the jury on October 6. Top 3 teams are announced on October 7, each giving a brief demo." },
 ];
