@@ -792,14 +792,13 @@ export default function Home() {
       {/* ── ORGS ───────────────────────────────────────────────── */}
       <section style={{ padding: "80px 40px", maxWidth: 1400, margin: "0 auto" }}>
         <div className="mono-label" style={{ marginBottom: 32, textAlign: "center" }}>Organised by & In collaboration with</div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, background: "var(--amber-border)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "var(--amber-border)" }}>
 
           {/* COPS — cops-logo.png, white outline on dark */}
           <div style={{ background: "var(--black-2)", padding: "32px 24px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
             <div style={{ width: 100, height: 60, position: "relative", opacity: 0.9 }}>
               <Image src="/cops-logo.png" alt="COPS IIT BHU" fill style={{ objectFit: "contain" }} />
             </div>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.72rem", color: "var(--white-muted)", lineHeight: 1.5 }}>Club of ProgrammerS<br />IIT (BHU) Varanasi</div>
             <div style={{ display: "inline-block", border: "1px solid rgba(245,166,35,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Organiser</div>
           </div>
 
@@ -809,31 +808,14 @@ export default function Home() {
               <Image src="/sntc-logo.png" alt="SNTC IIT BHU" fill style={{ objectFit: "contain" }}
                 onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
             </div>
-            <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.6rem", color: "var(--amber)", letterSpacing: "0.04em", lineHeight: 1 }}>SNTC</div>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.72rem", color: "var(--white-muted)", lineHeight: 1.5 }}>Science & Technology Council<br />IIT (BHU) Varanasi</div>
             <div style={{ display: "inline-block", border: "1px solid rgba(245,166,35,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Organiser</div>
-          </div>
-
-          {/* SEBI — real logo */}
-          <div style={{ background: "var(--black-2)", padding: "32px 24px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
-            <div style={{ width: 100, height: 60, position: "relative" }}>
-              <Image src="/sebi.png" alt="SEBI" fill style={{ objectFit: "contain" }} />
-            </div>
-            <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.8rem", color: "var(--amber)", letterSpacing: "0.04em", lineHeight: 1 }}>SEBI</div>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.72rem", color: "var(--white-muted)", lineHeight: 1.5 }}>Securities and Exchange Board<br />of India, Govt. of India</div>
-            <div style={{ display: "inline-block", border: "1px solid rgba(245,166,35,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Collaboration</div>
           </div>
 
           {/* NSDL */}
           <div style={{ background: "var(--black-2)", padding: "32px 24px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
-            <div style={{
-              width: 60, height: 60, border: "1.5px solid rgba(245,166,35,0.35)",
-              display: "flex", alignItems: "center", justifyContent: "center",
-            }}>
-              <IconShield size={28} color="var(--amber)" />
+            <div style={{ width: 120, height: 60, position: "relative" }}>
+              <Image src="/nsdl.svg" alt="NSDL" fill style={{ objectFit: "contain" }} />
             </div>
-            <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "1.8rem", color: "var(--amber)", letterSpacing: "0.04em", lineHeight: 1 }}>NSDL</div>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.72rem", color: "var(--white-muted)", lineHeight: 1.5 }}>National Securities Depository<br />Limited, Mumbai</div>
             <div style={{ display: "inline-block", border: "1px solid rgba(245,166,35,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Collaboration</div>
           </div>
 
@@ -906,7 +888,7 @@ export default function Home() {
           ))}
         </div>
         <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "rgba(245,166,35,0.4)" }}>
-          © 2026 COPS & SNTC, IIT (BHU) · SEBI · NSDL
+          © 2026 COPS & SNTC, IIT (BHU) · NSDL
         </div>
       </footer>
     </div>
