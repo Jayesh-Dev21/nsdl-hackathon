@@ -511,10 +511,10 @@ export default function Home() {
               <span>Explore the Challenge</span>
               <span aria-hidden="true">→</span>
             </a>
-            <a href="/ps.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-amber" id="hero-ps-btn">
+            {/* <a href="/ps.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-amber" id="hero-ps-btn">
               <span aria-hidden="true">↓</span>
               <span>Problem Statement</span>
-            </a>
+            </a> */}
           </div>
         </div>
       </section>
@@ -902,10 +902,10 @@ export default function Home() {
               <span>{REGISTER_LABEL}</span>
               <span aria-hidden="true">↗</span>
             </a>
-            <a href="/ps.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-amber" id="cta-ps-btn">
+            {/* <a href="/ps.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-amber" id="cta-ps-btn">
               <span aria-hidden="true">↓</span>
               <span>Problem Statement PDF</span>
-            </a>
+            </a> */}
           </div>
         </div>
       </section>
