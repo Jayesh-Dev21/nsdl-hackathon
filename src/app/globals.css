@@ -615,6 +615,7 @@ button { cursor: crosshair; }
   padding: 5px 12px;
 }
 
+/* ─── Live status dot ───────────────────────────────────────── */
 .status-dot {
   width: 6px; height: 6px;
   border-radius: 50%;
@@ -627,39 +628,184 @@ button { cursor: crosshair; }
   50%       { opacity: 0; }
 }
 
-/* ─── Countdown ─────────────────────────────────────────────── */
-.countdown-unit {
-  text-align: center;
-}
-
-.countdown-num {
+/* ─── Nav register button ───────────────────────────────────── */
+.btn-nav-register {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--amber);
+  color: var(--black);
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  color: var(--amber);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border: 1px solid var(--amber);
+  position: relative;
+  overflow: hidden;
+  transition: color 0.25s;
+}
+
+.btn-nav-register::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--black);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-nav-register:hover { color: var(--amber); }
+.btn-nav-register:hover::before { transform: scaleX(1); transform-origin: left; }
+.btn-nav-register span { position: relative; z-index: 1; }
+
+/* ─── Live registration panel ───────────────────────────────── */
+.live-panel {
+  border: 1px solid var(--amber-border);
+  background: var(--black-2);
+  max-width: 780px;
+  overflow: hidden;
+}
+
+.live-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: var(--black-3);
+  border-bottom: 1px solid var(--amber-border);
+  flex-wrap: wrap;
+}
+
+.live-panel-rule {
+  flex: 1;
+  height: 1px;
+  min-width: 20px;
+  background: linear-gradient(90deg, rgba(48,209,88,0.4), transparent);
+}
+
+.live-panel-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 20px;
+  flex-wrap: wrap;
+}
+
+.live-panel-meta {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.live-panel-meta > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.live-panel-key {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white-muted);
+}
+
+.live-panel-val {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+/* ─── Prize cards ───────────────────────────────────────────── */
+.prize-card {
+  background: var(--black-2);
+  padding: 44px 28px 36px;
+  text-align: center;
+  border-top: 2px solid var(--amber);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s;
+}
+
+.prize-card:hover { background: var(--black-3); }
+
+.prize-rank {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.28);
+}
+
+.prize-glyph {
+  font-size: 1.8rem;
   line-height: 1;
-  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  opacity: 0.75;
+}
+
+.prize-amount {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
   font-variant-numeric: tabular-nums;
 }
 
-.countdown-sep {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(2rem, 5vw, 4rem);
-  color: var(--amber-border);
-  line-height: 1;
-  margin: 0 4px;
-  align-self: flex-start;
-  padding-top: 4px;
+.prize-note {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-top: 8px;
 }
 
-.countdown-label {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
+/* ─── Certificate band ──────────────────────────────────────── */
+.cert-band {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border: 1px solid var(--amber-border);
+  border-left: 2px solid var(--amber);
+  background: var(--black-2);
+  padding: 28px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.cert-band-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--amber-border);
+  background: var(--black-3);
+}
+
+.cert-band > div:nth-child(2) { flex: 1; min-width: 260px; }
+
+.cert-band-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--white);
   text-transform: uppercase;
-  color: var(--white-muted);
-  margin-top: 6px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 /* ─── Guardrail row ─────────────────────────────────────────── */
@@ -746,6 +892,12 @@ button { cursor: crosshair; }
   .timeline-date { padding: 16px 12px; font-size: 0.68rem; }
   .nav-links { display: none; }
   .stat-value { font-size: 2rem; }
+  .btn-nav-register { display: none; }
+  .live-panel-body { flex-direction: column; align-items: stretch; }
+  .live-panel-body .btn-amber { justify-content: center; }
+  .live-panel-meta { gap: 20px; }
+  .cert-band { flex-direction: column; align-items: flex-start; }
+  .cert-band .btn-outline-amber { width: 100%; justify-content: center; }
 }
 
 @media (max-width: 480px) {

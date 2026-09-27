@@ -92,12 +92,22 @@ const IconWarning = ({ size = 14, color = "currentColor" }: { size?: number; col
 
 /* ─────────────────────────────────────────────────────────────────
    SANGYAN — Financial Terminal × Brutalist Editorial
-   Hackathon by COPS & SNTC, IIT BHU × SEBI × NSDL
+   Hackathon by SNTC, IIT (BHU) × SEBI × NSDL
    ───────────────────────────────────────────────────────────────── */
+
+/* ── Registration ────────────────────────────────────────────── */
+const REGISTER_URL = "https://unstop.com/p/sangyan-iit-bhu-1761145";
+const REGISTER_LABEL = "Register on Unstop";
 
 /* ── Ticker data ─────────────────────────────────────────────── */
 const TICKER_ITEMS = [
-  { sym: "SANGYAN", val: "OPEN", chg: "+∞", dir: "up" },
+  { sym: "SANGYAN", val: "OPEN", chg: "LIVE NOW", dir: "up" },
+  { sym: "REGISTRATION", val: "OPEN", chg: "UNSTOP", dir: "up" },
+  { sym: "PRIZE.1ST", val: "₹1,00,000", chg: "WINNER", dir: "up" },
+  { sym: "PRIZE.2ND", val: "₹50,000", chg: "RUNNER-UP", dir: "up" },
+  { sym: "PRIZE.3RD", val: "₹20,000", chg: "THIRD", dir: "up" },
+  { sym: "PRIZE.POOL", val: "₹1,70,000", chg: "TOP 3", dir: "up" },
+  { sym: "CERTIFICATE", val: "ALL", chg: "EVERYONE", dir: "up" },
   { sym: "FRAUD.INDEX", val: "₹12,000CR", chg: "DAILY LOSS", dir: "down" },
   { sym: "DEMAT.ACC", val: "16CR+", chg: "+22% YOY", dir: "up" },
   { sym: "F&O.LOSERS", val: "9/10", chg: "SEBI DATA", dir: "down" },
@@ -106,32 +116,11 @@ const TICKER_ITEMS = [
   { sym: "TRACK.C", val: "EDU.BHARAT", chg: "OPEN", dir: "up" },
   { sym: "TRACK.D", val: "BEH.RESIL", chg: "OPEN", dir: "up" },
   { sym: "TRACK.E", val: "MISMATCH", chg: "OPEN", dir: "up" },
-  { sym: "PRIZE.POOL", val: "TBA", chg: "TOP 3 WIN", dir: "up" },
+  { sym: "ENTRY.FEE", val: "₹0", chg: "FREE", dir: "up" },
   { sym: "SPRINT.DAYS", val: "7 DAYS", chg: "1-4 OCT", dir: "up" },
   { sym: "TIER2/3.USR", val: "70%+", chg: "NEW DEMAT", dir: "up" },
-  { sym: "COPS.IITBHU", val: "ORGANIZER", chg: "VARANASI", dir: "up" },
+  { sym: "SNTC.IITBHU", val: "ORGANIZER", chg: "VARANASI", dir: "up" },
 ];
-
-/* ── Countdown hook ──────────────────────────────────────────── */
-function useCountdown(target: Date) {
-  const [t, setT] = useState({ d: 0, h: 0, m: 0, s: 0 });
-  useEffect(() => {
-    const calc = () => {
-      const diff = target.getTime() - Date.now();
-      if (diff <= 0) return { d: 0, h: 0, m: 0, s: 0 };
-      return {
-        d: Math.floor(diff / 864e5),
-        h: Math.floor((diff % 864e5) / 36e5),
-        m: Math.floor((diff % 36e5) / 6e4),
-        s: Math.floor((diff % 6e4) / 1e3),
-      };
-    };
-    setT(calc());
-    const id = setInterval(() => setT(calc()), 1000);
-    return () => clearInterval(id);
-  }, [target]);
-  return t;
-}
 
 /* ── Intersection hook ───────────────────────────────────────── */
 function useVisible(ref: React.RefObject<Element | null>, threshold = 0.15) {
@@ -195,12 +184,19 @@ const TRACKS = [
 
 /* ── Timeline data ───────────────────────────────────────────── */
 const TIMELINE = [
-  { date: "27–29 SEP", phase: "Promotion & Onboarding", desc: "Hackathon promotion across campuses; team registration.", phase_code: "PHASE_01" },
+  { date: "NOW", phase: "Registration Open", desc: "Team registration is live on Unstop. Register a team of 1–4 — entry is free and every participant gets a certificate.", phase_code: "PHASE_01" },
   { date: "30 SEP", phase: "Orientation", desc: "Teams are walked through the problem statement, tracks, and guardrails to align on scope.", phase_code: "PHASE_02" },
   { date: "01–04 OCT", phase: "Build Sprint", desc: "Teams work on their solution and prepare their submission.", phase_code: "PHASE_03" },
   { date: "05 OCT", phase: "Shortlisting", desc: "Top 5–7 teams are shortlisted from all submissions.", phase_code: "PHASE_04" },
   { date: "06 OCT", phase: "Final Jury Round", desc: "Shortlisted teams present before the jury.", phase_code: "PHASE_05" },
   { date: "07 OCT", phase: "Results", desc: "Top 3 teams announced, each giving a quick presentation of their work.", phase_code: "PHASE_06" },
+];
+
+/* ── Prize structure ─────────────────────────────────────────── */
+const PRIZES = [
+  { rank: "01", label: "1st Place", glyph: "◈", amount: "₹1,00,000", accent: "#ffffff", note: "Grand prize" },
+  { rank: "02", label: "2nd Place", glyph: "◇", amount: "₹50,000", accent: "rgba(248,244,236,0.62)", note: "Runner-up" },
+  { rank: "03", label: "3rd Place", glyph: "△", amount: "₹20,000", accent: "#b45309", note: "Third place" },
 ];
 
 /* ── Evaluation criteria ─────────────────────────────────────── */
@@ -214,11 +210,13 @@ const CRITERIA = [
 
 /* ── FAQ data ────────────────────────────────────────────────── */
 const FAQS = [
-  { q: "Who can participate?", a: "Open to all college students across India. Teams of 2–4 members." },
+  { q: "Who can participate?", a: "Open to all college students across India. Teams of 1–4 members." },
+  { q: "How do I register?", a: "Registrations are live. Register your team on Unstop using the official SANGYAN listing — it takes a couple of minutes and there is no fee." },
   { q: "Is there a registration fee?", a: "No. Participation is completely free." },
+  { q: "What are the prizes?", a: "1st place ₹1,00,000, 2nd place ₹50,000, and 3rd place ₹20,000. On top of cash prizes, every participant receives a certificate of participation." },
   { q: "Do we need financial domain expertise?", a: "No. Curiosity, empathy for the target user, and ability to build a working prototype are sufficient. The orientation session will help you align." },
   { q: "Can we use AI/ML models and third-party APIs?", a: "Yes. Any open-source or commercially available technology is allowed. Disclose third-party components in your submission." },
-  { q: "Will all participants receive certificates?", a: "Yes. All participants will receive a participation certificate." },
+  { q: "Will all participants receive certificates?", a: "Yes. Every registered participant, winning or not, receives a certificate of participation." },
   { q: "Who owns the IP of submissions?", a: "All intellectual property in submissions vests solely in NSDL upon submission, per the Terms & Conditions." },
   { q: "What is the final presentation format?", a: "Shortlisted teams present before the jury on October 6. Top 3 teams are announced on October 7, each giving a brief demo." },
 ];
@@ -322,8 +320,6 @@ function TrackPanel({ t }: { t: typeof TRACKS[0] }) {
    MAIN PAGE
    ═══════════════════════════════════════════════════════════════ */
 export default function Home() {
-  const registrationOpen = new Date("2026-09-27T00:00:00+05:30");
-  const countdown = useCountdown(registrationOpen);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -332,8 +328,6 @@ export default function Home() {
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
-
-  const pad = (n: number) => String(n).padStart(2, "0");
 
   /* Duplicate ticker for seamless loop */
   const allItems = [...TICKER_ITEMS, ...TICKER_ITEMS];
@@ -369,8 +363,17 @@ export default function Home() {
         <div style={{ marginLeft: 32, display: "flex", alignItems: "center", gap: 12 }}>
           <div className="status-pill">
             <span className="status-dot" />
-            Coming Soon
+            Registrations Open
           </div>
+          {/* <a
+            href={REGISTER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-nav-register"
+          >
+            <span>Register</span>
+            <span aria-hidden="true">↗</span>
+          </a> */}
           <button
             onClick={() => setMobileOpen(o => !o)}
             style={{ background: "none", border: "1px solid var(--amber-border)", color: "var(--amber)", padding: "6px 10px", fontSize: "0.8rem", fontFamily: "var(--font-mono)", display: "none" }}
@@ -393,6 +396,17 @@ export default function Home() {
               style={{ display: "block", padding: "12px 0", fontFamily: "var(--font-mono)", fontSize: "0.9rem", color: "var(--white-muted)", borderBottom: "1px solid var(--amber-border)" }}
             >{l}</a>
           ))}
+          <a
+            href={REGISTER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileOpen(false)}
+            className="btn-amber"
+            style={{ marginTop: 20, justifyContent: "center", width: "100%" }}
+          >
+            <span>{REGISTER_LABEL}</span>
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
       )}
 
@@ -452,40 +466,53 @@ export default function Home() {
             animation: "fade-up 0.7s 0.2s ease both",
           }}>
             <p className="serif-quote" style={{ marginBottom: 16 }}>
-              "The objective is to help users{" "}
-              <em>lose less, decide rationally, and understand what they are getting into.</em>"
+              &ldquo;The objective is to help users{" "}
+              <em>lose less, decide rationally, and understand what they are getting into.</em>&rdquo;
             </p>
             <p className="mono-body">
-              Organised by <span style={{ color: "var(--amber)" }}>COPS & SNTC, IIT (BHU) Varanasi</span>
+              Organised by <span style={{ color: "var(--amber)" }}>SNTC, IIT (BHU) Varanasi</span>
               {" "}in collaboration with <span style={{ color: "var(--amber)" }}>SEBI & NSDL.</span>
               {" "}7-day build sprint · 5 focus tracks + 1 open track.
             </p>
           </div>
 
-          {/* Countdown ──────────────────────────────── */}
+          {/* Registration live panel ──────────────── */}
           <div style={{ marginBottom: 40, animation: "fade-up 0.7s 0.3s ease both" }}>
-            <div className="mono-label" style={{ marginBottom: 20 }}>— Registration Opens In</div>
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 4 }}>
-              {[["d", "Days"], ["h", "Hours"], ["m", "Min"], ["s", "Sec"]].map(([k, lbl], i) => (
-                <>
-                  <div key={k} className="countdown-unit">
-                    <div className="countdown-num">{pad(countdown[k as keyof typeof countdown])}</div>
-                    <div className="countdown-label">{lbl}</div>
-                  </div>
-                  {i < 3 && <div className="countdown-sep">:</div>}
-                </>
-              ))}
+            <div className="live-panel">
+              <div className="live-panel-head">
+                <span className="status-dot" style={{ background: "var(--green)" }} />
+                <span className="mono-label" style={{ color: "var(--green)" }}>Registration / Live</span>
+                <span className="live-panel-rule" />
+                <span className="mono-body" style={{ fontSize: "0.7rem" }}>teams of 1–4</span>
+              </div>
+              <div className="live-panel-body">
+                <a
+                  href={REGISTER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-amber"
+                  id="hero-register-btn"
+                >
+                  <span>{REGISTER_LABEL}</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <div className="live-panel-meta">
+                  <div><span className="live-panel-key">Prize pool</span><span className="live-panel-val">₹1,70,000</span></div>
+                  <div><span className="live-panel-key">Certificate</span><span className="live-panel-val">All participants</span></div>
+                  <div><span className="live-panel-key">Entry fee</span><span className="live-panel-val">Free</span></div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* CTAs */}
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap", animation: "fade-up 0.7s 0.4s ease both" }}>
-            <a href="#about" className="btn-amber" id="hero-explore-btn">
+            <a href="#about" className="btn-outline-amber" id="hero-explore-btn">
               <span>Explore the Challenge</span>
-              <span>→</span>
+              <span aria-hidden="true">→</span>
             </a>
             <a href="/ps.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-amber" id="hero-ps-btn">
-              <span>↓</span>
+              <span aria-hidden="true">↓</span>
               <span>Problem Statement</span>
             </a>
           </div>
@@ -496,14 +523,15 @@ export default function Home() {
       <div style={{ borderTop: "1px solid var(--amber-border)", borderBottom: "1px solid var(--amber-border)" }}>
         <div style={{ maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
           {[
+            { v: "OPEN", l: "Registrations", s: "Register now" },
+            { v: "₹1.7L", l: "Prize Pool", s: "Top 3 rewarded" },
+            { v: "ALL", l: "Get a Cert", s: "Every participant" },
             { v: "7", l: "Day Sprint", s: "Build period" },
             { v: "5+1", l: "Tracks", s: "Open to all" },
             { v: "16CR+", l: "Demat Accs", s: "The scale" },
-            { v: "9/10", l: "F&O Losers", s: "SEBI study" },
-            { v: "TOP 3", l: "Awards", s: "Prizes TBA" },
             { v: "FREE", l: "To Enter", s: "No fee" },
           ].map((s, i) => (
-            <div key={i} className="stat-cell" style={{ borderRight: i < 5 ? "1px solid rgba(255,255,255,0.1)" : "none" }}>
+            <div key={i} className="stat-cell" style={{ borderRight: i < 6 ? "1px solid rgba(255,255,255,0.1)" : "none" }}>
               <div className="stat-value">{s.v}</div>
               <div className="stat-label">{s.l}</div>
               <div className="stat-sub">{s.s}</div>
@@ -524,13 +552,13 @@ export default function Home() {
               <span className="outline-text">BHARAT</span>
             </h2>
             <div className="mono-body" style={{ marginBottom: 20 }}>
-              India's retail investor base has grown at an unprecedented pace — Demat accounts crossed{" "}
+              India&rsquo;s retail investor base has grown at an unprecedented pace — Demat accounts crossed{" "}
               <span style={{ color: "var(--amber)", fontWeight: 600 }}>16+ crore</span>, with more than 70% of
               incremental accounts opening from non-metro, Tier-2, and Tier-3 cities. Access to markets has
               outrun access to financial confidence.
             </div>
             <div className="mono-body">
-              SEBI's own studies show{" "}
+              SEBI&rsquo;s own studies show{" "}
               <span style={{ color: "var(--red)", fontWeight: 600 }}>9 out of 10</span>{" "}
               individual traders in equity F&O incur net losses — a signal that market access alone is not
               building resilience.
@@ -661,32 +689,46 @@ export default function Home() {
           <span className="outline-text">RECOGNITION</span>
         </h2>
         <div className="grid-thirds" style={{ gap: 1, background: "var(--amber-border)", marginBottom: 32 }}>
-          {[
-            { rank: "01", label: "1st Place", glyph: "◈", accent: "var(--amber)" },
-            { rank: "02", label: "2nd Place", glyph: "◇", accent: "rgba(248,244,236,0.5)" },
-            { rank: "03", label: "3rd Place", glyph: "△", accent: "#b45309" },
-          ].map(p => (
-            <div key={p.rank} style={{
-              background: "var(--black-2)",
-              padding: "48px 32px",
-              textAlign: "center",
-              borderTop: `2px solid ${p.accent}`,
-            }}>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "2.5rem", color: p.accent, marginBottom: 12, opacity: 0.8 }}>{p.glyph}</div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "3rem", color: p.accent, marginBottom: 8 }}>TBA</div>
+          {PRIZES.map(p => (
+            <div key={p.rank} className="prize-card" style={{ borderTopColor: p.accent }}>
+              <div className="prize-rank">{p.rank}</div>
+              <div className="prize-glyph" style={{ color: p.accent }}>{p.glyph}</div>
+              <div className="prize-amount" style={{ color: p.accent }}>{p.amount}</div>
               <div className="mono-label" style={{ color: "var(--white-muted)" }}>{p.label}</div>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", marginTop: 8 }}>To be announced</div>
+              <div className="prize-note">{p.note}</div>
             </div>
           ))}
+        </div>
+
+        {/* Certificate band — applies to everyone */}
+        <div className="cert-band">
+          <div className="cert-band-icon"><IconCert size={26} color="var(--amber)" /></div>
+          <div>
+            <div className="cert-band-title">EVERY participant gets a certificate</div>
+            <div className="mono-body" style={{ fontSize: "0.8rem", marginTop: 6 }}>
+              Win or lose, every registered participant receives a signed certificate of participation.
+              Prizes are for the podium — recognition is for everyone who builds.
+            </div>
+          </div>
+          <a
+            href={REGISTER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline-amber"
+            style={{ flexShrink: 0, alignSelf: "center" }}
+          >
+            <span>{REGISTER_LABEL}</span>
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
 
         {/* Benefits */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 1, background: "var(--amber-border)" }}>
           {[
-            { Icon: IconCert, label: "Participation Certs", desc: "Signed by IIT BHU for all participants" },
             { Icon: IconGift, label: "Gifts", desc: "Goodies for all Techathon participants" },
             { Icon: IconNews, label: "Media Coverage", desc: "Winners featured in national publications" },
             { Icon: IconNetwork, label: "Network", desc: "Direct access to SEBI & NSDL officials" },
+            { Icon: IconShield, label: "Guardrails", desc: "Real, shippable public-good product" },
           ].map(b => (
             <div key={b.label} style={{ background: "var(--black-2)", padding: "24px 18px" }}>
               <div style={{ marginBottom: 12, color: "var(--amber)", lineHeight: 0 }}>
@@ -794,14 +836,6 @@ export default function Home() {
         <div className="mono-label" style={{ marginBottom: 32, textAlign: "center" }}>Organised by & In collaboration with</div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 1, background: "var(--amber-border)" }}>
 
-          {/* COPS — cops-logo.png, white outline on dark */}
-          <div style={{ background: "var(--black-2)", padding: "32px 24px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
-            <div style={{ width: 100, height: 60, position: "relative", opacity: 0.9 }}>
-              <Image src="/cops-logo.png" alt="COPS IIT BHU" fill style={{ objectFit: "contain" }} />
-            </div>
-            <div style={{ display: "inline-block", border: "1px solid rgba(255,255,255,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Organiser</div>
-          </div>
-
           {/* SNTC — uses sntc-logo.png if present, else text fallback */}
           <div style={{ background: "var(--black-2)", padding: "32px 24px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
             <div style={{ width: 80, height: 56, position: "relative", filter: "brightness(0) invert(1)", opacity: 0.85 }}>
@@ -845,7 +879,10 @@ export default function Home() {
           backgroundImage: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 70%)",
         }} />
         <div style={{ position: "relative", maxWidth: 700, margin: "0 auto" }}>
-          <div className="mono-label" style={{ marginBottom: 24 }}>Ready to Build?</div>
+          <div className="mono-label" style={{ marginBottom: 24 }}>
+            <span className="status-dot" style={{ display: "inline-block", marginRight: 8, verticalAlign: "middle" }} />
+            Registrations Open
+          </div>
           <h2 className="display-lg" style={{ marginBottom: 24 }}>
             <span className="outline-text">MAKE INDIA</span><br />
             <span className="amber-fill">FRAUD-PROOF</span>
@@ -855,15 +892,19 @@ export default function Home() {
             — and genuinely make their financial journey safer.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <span
-              className="btn-amber cursor-blink"
-              style={{ fontSize: "0.9rem" }}
+            <a
+              href={REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-amber"
               id="cta-registration-btn"
             >
-              <span>Registration Opening 27 Sep</span>
-            </span>
+              <span>{REGISTER_LABEL}</span>
+              <span aria-hidden="true">↗</span>
+            </a>
             <a href="/ps.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-amber" id="cta-ps-btn">
-              <span>↓ Problem Statement PDF</span>
+              <span aria-hidden="true">↓</span>
+              <span>Problem Statement PDF</span>
             </a>
           </div>
         </div>
@@ -896,7 +937,7 @@ export default function Home() {
           ))}
         </div>
         <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "rgba(255,255,255,0.4)" }}>
-          © 2026 COPS & SNTC, IIT (BHU) · SEBI · NSDL
+          © 2026 SNTC, IIT (BHU) · SEBI · NSDL
         </div>
       </footer>
     </div>

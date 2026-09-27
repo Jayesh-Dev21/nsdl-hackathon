@@ -15,21 +15,20 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "SANGYAN — Investor Resilience Hackathon | COPS IIT BHU × SEBI × NSDL",
+  title: "SANGYAN — Investor Resilience Hackathon | SNTC IIT (BHU) × SEBI × NSDL",
   description:
-    "SANGYAN is a national 7-day hackathon organised by Club of ProgrammerS (COPS), IIT (BHU) Varanasi in collaboration with SEBI and NSDL. Build technology that helps Indians become harder to fool, safer, and more resilient in their financial decisions.",
+    "SANGYAN is a national 7-day hackathon organised by SNTC, IIT (BHU) Varanasi in collaboration with SEBI and NSDL. Build technology that helps Indians become harder to fool, safer, and more resilient in their financial decisions.",
   keywords: [
     "SANGYAN hackathon",
     "NSDL hackathon",
     "SEBI hackathon",
     "IIT BHU hackathon",
-    "COPS IIT BHU",
     "investor resilience",
     "fintech hackathon India",
     "financial literacy hackathon",
     "SNTC IIT BHU",
   ],
-  authors: [{ name: "Club of ProgrammerS (COPS), IIT (BHU) Varanasi" }],
+  authors: [{ name: "SNTC, IIT (BHU) Varanasi" }],
   icons: {
     icon: [
       { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
@@ -41,16 +40,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SANGYAN — Investor Resilience Hackathon",
     description:
-      "A national hackathon to build tech that protects Indian investors. Organised by COPS IIT BHU in collaboration with SEBI & NSDL.",
+      "A national hackathon to build tech that protects Indian investors. Organised by SNTC, IIT (BHU) in collaboration with SEBI & NSDL.",
     type: "website",
     locale: "en_IN",
     siteName: "SANGYAN Hackathon",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SANGYAN — Investor Resilience Hackathon | COPS IIT BHU",
+    title: "SANGYAN — Investor Resilience Hackathon | SNTC IIT BHU",
     description:
-      "Build technology to protect Indian investors. National hackathon by COPS IIT BHU × SEBI × NSDL.",
+      "Build technology to protect Indian investors. National hackathon by SNTC, IIT BHU × SEBI × NSDL.",
   },
   robots: {
     index: true,

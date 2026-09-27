@@ -126,9 +126,6 @@ function SangyanPoster() {
       }}>
         {/* Left: organiser logos */}
         <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-          <div style={{ width: 106, height: 56, position: "relative" }}>
-            <Image src="/cops-logo.png" alt="COPS" fill sizes="106px" style={{ objectFit: "contain" }} />
-          </div>
           <div style={{
             width: 130, height: 130, position: "relative",
             filter: "brightness(0) invert(1)", opacity: 0.82
@@ -242,7 +239,7 @@ function SangyanPoster() {
             fontSize: 9, color: C.boneDim,
             letterSpacing: "0.12em", marginTop: 12
           }}>
-            Registration Opens: 27 Sep 2026  ·  5 Tracks + 1 Open Innovation
+            Registration Open Now  ·  5 Tracks + 1 Open Innovation  ·  ₹1,70,000 Prize Pool
           </div>
         </div>
       </div>
@@ -273,7 +270,7 @@ function SangyanPoster() {
             color: "rgba(255,255,255,0.48)",
             marginBottom: 10, textTransform: "uppercase" as const
           }}>
-            Open to all college students · Teams of 2–4 · Free Entry
+            Open to all college students · Teams of 1–4 · Free Entry
           </div>
           <div style={{
             fontFamily: "'Cormorant Garamond',Georgia,serif",
@@ -299,19 +296,19 @@ function SangyanPoster() {
             justifyContent: "flex-end", marginBottom: 8
           }}>
             <div style={{ height: 1, width: 32, background: "rgba(255,255,255,0.3)" }} />
-            <div style={{
-              fontFamily: "'DM Mono','Courier New',monospace",
-              fontSize: 9, color: "rgba(255,255,255,0.48)", letterSpacing: "0.18em"
-            }}>
-              REGISTRATION OPENS
-            </div>
+          <div style={{
+            fontFamily: "'DM Mono','Courier New',monospace",
+            fontSize: 9, color: "rgba(255,255,255,0.48)", letterSpacing: "0.18em"
+          }}>
+            REGISTRATION IS OPEN
+          </div>
           </div>
           <div style={{
             fontFamily: "'Cormorant Garamond',Georgia,serif",
             fontWeight: 600, fontSize: 42, color: "#FFFFFF",
             letterSpacing: "-0.01em", lineHeight: 1
           }}>
-            27 September 2026
+            Register on Unstop
           </div>
         </div>
       </div>
