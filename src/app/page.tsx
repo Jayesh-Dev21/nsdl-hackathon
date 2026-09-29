@@ -140,42 +140,42 @@ function useVisible(ref: React.RefObject<Element | null>, threshold = 0.15) {
 const TRACKS = [
   {
     id: "A", code: "TRK-A",
-    color: "#FF3B30",
+    color: "#a3241c",
     title: "Digital Fraud & Scam Resilience",
     focus: "Detecting, warning against, and intercepting deceptive financial vectors before money changes hands.",
     ideas: ["Scam & Claim Verifier", "Tip-Group Risk Profiler", "Mule & Phishing Radar"],
   },
   {
     id: "B", code: "TRK-B",
-    color: "#ffffff",
+    color: "#7c1522",
     title: "Investor Awareness, Rights & Grievance",
     focus: "Making investor rights, protections, and complaint mechanisms usable by a first-time user.",
     ideas: ["Grievance Assistant", "Nominee & Family Wealth Tracker", "Rights & Process Navigator"],
   },
   {
     id: "C", code: "TRK-C",
-    color: "#30D158",
+    color: "#2f6b2f",
     title: "Investor Education for Bharat",
     focus: "Replacing jargon-heavy disclosures and static PDFs with understanding-first, regional-language learning.",
     ideas: ["Voice-First Explainer", "Consequence Simulator", "Plain-Language Disclosure Reader"],
   },
   {
     id: "D", code: "TRK-D",
-    color: "#BF5AF2",
+    color: "#8a5a1b",
     title: "Financial Habits & Behavioural Resilience",
     focus: "Helping investors pause, reflect, and build discipline instead of acting on impulse.",
     ideas: ["Cooling-Off Circuit Breaker", "Decision Journal", "Goal-Anchored Tracker"],
   },
   {
     id: "E", code: "TRK-E",
-    color: "#64b5f6",
+    color: "#2f5d7c",
     title: "Misinformation & Content Literacy",
     focus: "Helping users evaluate the flood of financial content on WhatsApp, YouTube, and Telegram.",
     ideas: ["Claim Evidence-Checker", "Promotion vs Education Classifier", "Source Tracer"],
   },
   {
     id: "OPEN", code: "TRK-∅",
-    color: "#ffffff",
+    color: "#b07c1e",
     title: "Open Innovation for Investor Resilience",
     focus: "Any software solution that meaningfully strengthens investor resilience is welcome here.",
     ideas: ["Accessibility-first tools for elderly/low-literacy investors", "Offline / USSD / IVR solutions", "DigiLocker & Account Aggregator integrations"],
@@ -194,9 +194,9 @@ const TIMELINE = [
 
 /* ── Prize structure ─────────────────────────────────────────── */
 const PRIZES = [
-  { rank: "01", label: "1st Place", glyph: "◈", amount: "₹1,00,000", accent: "#ffffff", note: "Grand prize" },
-  { rank: "02", label: "2nd Place", glyph: "◇", amount: "₹50,000", accent: "rgba(248,244,236,0.62)", note: "Runner-up" },
-  { rank: "03", label: "3rd Place", glyph: "△", amount: "₹20,000", accent: "#b45309", note: "Third place" },
+  { rank: "01", label: "1st Place", glyph: "◈", amount: "₹1,00,000", accent: "#7c1522", note: "Grand prize" },
+  { rank: "02", label: "2nd Place", glyph: "◇", amount: "₹50,000", accent: "#b07c1e", note: "Runner-up" },
+  { rank: "03", label: "3rd Place", glyph: "△", amount: "₹20,000", accent: "#8a6a2f", note: "Third place" },
 ];
 
 /* ── Evaluation criteria ─────────────────────────────────────── */
@@ -340,7 +340,7 @@ export default function Home() {
         <div className="ticker-track">
           {allItems.map((item, i) => (
             <span key={i} className="ticker-item">
-              <span style={{ color: "rgba(0,0,0,0.5)" }}>{item.sym}</span>
+              <span style={{ color: "rgba(246,238,218,0.65)" }}>{item.sym}</span>
               <span className="sep">·</span>
               <span style={{ fontWeight: 700 }}>{item.val}</span>
               <span className={item.dir}>{item.chg}</span>
@@ -387,7 +387,7 @@ export default function Home() {
       {mobileOpen && (
         <div style={{
           position: "fixed", top: "calc(var(--ticker-h) + var(--nav-h))", left: 0, right: 0,
-          background: "rgba(8,8,8,0.98)", backdropFilter: "blur(12px)",
+          background: "rgba(246,238,218,0.97)", backdropFilter: "blur(12px)",
           border: "1px solid var(--amber-border)", zIndex: 99, padding: "20px",
         }}>
           {["About", "Tracks", "Timeline", "Prizes", "FAQ"].map(l => (
@@ -432,7 +432,7 @@ export default function Home() {
           position: "absolute", right: -40, top: "50%", transform: "translateY(-50%)",
           fontFamily: "var(--font-display)", fontWeight: 800,
           fontSize: "clamp(180px, 25vw, 340px)",
-          color: "rgba(255,255,255,0.04)",
+          color: "rgba(124,21,34,0.06)",
           lineHeight: 1, userSelect: "none", pointerEvents: "none",
           letterSpacing: "-0.04em",
         }}>2026</div>
@@ -531,7 +531,7 @@ export default function Home() {
             { v: "16CR+", l: "Demat Accs", s: "The scale" },
             { v: "FREE", l: "To Enter", s: "No fee" },
           ].map((s, i) => (
-            <div key={i} className="stat-cell" style={{ borderRight: i < 6 ? "1px solid rgba(255,255,255,0.1)" : "none" }}>
+            <div key={i} className="stat-cell" style={{ borderRight: i < 6 ? "1px solid rgba(124,21,34,0.12)" : "none" }}>
               <div className="stat-value">{s.v}</div>
               <div className="stat-label">{s.l}</div>
               <div className="stat-sub">{s.s}</div>
@@ -778,7 +778,7 @@ export default function Home() {
               ].map(([code, label, desc]) => (
                 <div key={code} style={{
                   display: "grid", gridTemplateColumns: "60px 1fr",
-                  gap: 16, borderBottom: "1px solid rgba(255,255,255,0.08)", padding: "16px 0",
+                  gap: 16, borderBottom: "1px solid rgba(124,21,34,0.1)", padding: "16px 0",
                 }}>
                   <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", fontWeight: 700, color: "var(--amber)", paddingTop: 2 }}>{code}</div>
                   <div>
@@ -838,11 +838,11 @@ export default function Home() {
 
           {/* SNTC — uses sntc-logo.png if present, else text fallback */}
           <div style={{ background: "var(--black-2)", padding: "32px 24px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
-            <div style={{ width: 80, height: 56, position: "relative", filter: "brightness(0) invert(1)", opacity: 0.85 }}>
+            <div style={{ width: 80, height: 56, position: "relative", filter: "invert(1)", opacity: 0.85 }}>
               <Image src="/sntc-logo.png" alt="SNTC IIT BHU" fill style={{ objectFit: "contain" }}
                 onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
             </div>
-            <div style={{ display: "inline-block", border: "1px solid rgba(255,255,255,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Organiser</div>
+            <div style={{ display: "inline-block", border: "1px solid rgba(124,21,34,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Organiser</div>
           </div>
 
           {/* SEBI — real logo */}
@@ -850,7 +850,7 @@ export default function Home() {
             <div style={{ width: 100, height: 60, position: "relative" }}>
               <Image src="/sebi.png" alt="SEBI" fill style={{ objectFit: "contain" }} />
             </div>
-            <div style={{ display: "inline-block", border: "1px solid rgba(255,255,255,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Collaboration</div>
+            <div style={{ display: "inline-block", border: "1px solid rgba(124,21,34,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Collaboration</div>
           </div>
 
           {/* NSDL */}
@@ -858,7 +858,7 @@ export default function Home() {
             <div style={{ width: 120, height: 60, position: "relative" }}>
               <Image src="/nsdl.svg" alt="NSDL" fill style={{ objectFit: "contain" }} />
             </div>
-            <div style={{ display: "inline-block", border: "1px solid rgba(255,255,255,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Collaboration</div>
+            <div style={{ display: "inline-block", border: "1px solid rgba(124,21,34,0.2)", padding: "2px 8px", fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)" }}>Collaboration</div>
           </div>
 
         </div>
@@ -876,7 +876,7 @@ export default function Home() {
         {/* Decorative cross-hair */}
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
-          backgroundImage: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 70%)",
+          backgroundImage: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(176,124,30,0.09) 0%, transparent 70%)",
         }} />
         <div style={{ position: "relative", maxWidth: 700, margin: "0 auto" }}>
           <div className="mono-label" style={{ marginBottom: 24 }}>
@@ -912,7 +912,7 @@ export default function Home() {
 
       {/* ── FOOTER ─────────────────────────────────────────────── */}
       <footer style={{
-        borderTop: "1px solid rgba(255,255,255,0.12)",
+        borderTop: "1px solid rgba(124,21,34,0.15)",
         padding: "32px 40px",
         display: "flex",
         justifyContent: "space-between",
@@ -936,7 +936,7 @@ export default function Home() {
             >{l}</a>
           ))}
         </div>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "rgba(255,255,255,0.4)" }}>
+        <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "rgba(46,10,16,0.45)" }}>
           © 2026 SNTC, IIT (BHU) · SEBI · NSDL
         </div>
       </footer>
