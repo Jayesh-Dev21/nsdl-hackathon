@@ -925,7 +925,7 @@ export default function Home() {
           <span style={{ color: "var(--amber)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.85rem" }}>[SANGYAN]</span>
           {" "}· Investor Resilience Hackathon 2026
         </div>
-        <div style={{ display: "flex", gap: 24 }}>
+        {/* <div style={{ display: "flex", gap: 24 }}>
           {["About", "Tracks", "Timeline", "Problem Statement"].map(l => (
             <a key={l} href={l === "Problem Statement" ? "/ps.pdf" : `#${l.toLowerCase().replace(" ", "-")}`}
               target={l === "Problem Statement" ? "_blank" : undefined}
@@ -935,7 +935,7 @@ export default function Home() {
               onMouseLeave={e => (e.currentTarget.style.color = "var(--white-muted)")}
             >{l}</a>
           ))}
-        </div>
+        </div> */}
         <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "rgba(46,10,16,0.45)" }}>
           © 2026 SNTC, IIT (BHU) · SEBI · NSDL
         </div>
