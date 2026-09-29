@@ -70,7 +70,7 @@ export default function RootLayout({
     >
       <head>
         <link rel="canonical" href="https://hackathon.copsiitbhu.co.in" />
-        <meta name="theme-color" content="#0d0f14" />
+        <meta name="theme-color" content="#f6eeda" />
       </head>
       <body className="min-h-screen flex flex-col antialiased">{children}</body>
     </html>
