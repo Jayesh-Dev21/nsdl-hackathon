@@ -888,7 +888,7 @@ export default function Home() {
             <span className="amber-fill">FRAUD-PROOF</span>
           </h2>
           <p className="serif-quote" style={{ marginBottom: 40, fontSize: "1.1rem" }}>
-            Build something that could sit in the hands of a first-time investor in Varanasi, Ranchi, or Jaipur
+            Build something that could sit in the hands of a first-time investor in Varanasi, Ranchi, Patiala, or Jaipur
             — and genuinely make their financial journey safer.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
