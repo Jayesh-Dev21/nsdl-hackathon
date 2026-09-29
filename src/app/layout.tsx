@@ -72,7 +72,12 @@ export default function RootLayout({
         <link rel="canonical" href="https://hackathon.copsiitbhu.co.in" />
         <meta name="theme-color" content="#f6eeda" />
       </head>
-      <body className="min-h-screen flex flex-col antialiased">{children}</body>
+      <body
+        suppressHydrationWarning
+        className="min-h-screen flex flex-col antialiased"
+      >
+        {children}
+      </body>
     </html>
   );
 }
