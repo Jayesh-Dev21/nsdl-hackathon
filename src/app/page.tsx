@@ -325,12 +325,110 @@ function TrackPanel({ t }: { t: typeof TRACKS[0] }) {
   );
 }
 
+/* ── Notification toast ─────────────────────────────────────── */
+function Notice({
+  tone,
+  label,
+  title,
+  body,
+  href,
+  cta,
+  onClose,
+}: {
+  tone: "discord" | "maroon";
+  label: string;
+  title: string;
+  body: string;
+  href?: string;
+  cta?: string;
+  onClose: () => void;
+}) {
+  const accent = tone === "discord" ? "#5865F2" : "var(--amber)";
+  return (
+    <div
+      role="status"
+      style={{
+        position: "relative",
+        width: 300,
+        maxWidth: "calc(100vw - 40px)",
+        background: "var(--black-2)",
+        border: "1px solid var(--amber-border)",
+        borderLeft: `3px solid ${accent}`,
+        padding: "16px 18px",
+        boxShadow: "0 12px 32px rgba(46,10,16,0.14)",
+        animation: "fade-up 0.5s ease both",
+      }}
+    >
+      <button
+        onClick={onClose}
+        aria-label={`Dismiss: ${title}`}
+        style={{
+          position: "absolute", top: 6, right: 6,
+          background: "none", border: "none", padding: "4px 6px",
+          fontFamily: "var(--font-mono)", fontSize: "1rem", lineHeight: 1,
+          color: "var(--white-muted)", transition: "color 0.2s",
+        }}
+        onMouseEnter={e => (e.currentTarget.style.color = accent)}
+        onMouseLeave={e => (e.currentTarget.style.color = "var(--white-muted)")}
+      >
+        &times;
+      </button>
+
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
+        {tone === "discord" ? <IconDiscord size={14} color={accent} /> : <IconAlert size={14} color={accent} />}
+        <span className="mono-label" style={{ color: accent, fontSize: "0.62rem" }}>{label}</span>
+      </div>
+
+      <div
+        style={{
+          fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "0.95rem",
+          color: "var(--white)", marginBottom: 6, paddingRight: 18, lineHeight: 1.3,
+        }}
+      >
+        {title}
+      </div>
+
+      <div className="mono-body" style={{ fontSize: "0.75rem", lineHeight: 1.65, marginBottom: href ? 14 : 0 }}>
+        {body}
+      </div>
+
+      {href && (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-flex", alignItems: "center", gap: 8,
+            padding: "9px 18px", border: `1px solid ${accent}`, color: accent,
+            fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.72rem",
+            letterSpacing: "0.1em", textTransform: "uppercase", transition: "all 0.25s",
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.background = accent;
+            e.currentTarget.style.color = "#fff";
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.background = "transparent";
+            e.currentTarget.style.color = accent;
+          }}
+        >
+          <span>{cta}</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      )}
+    </div>
+  );
+}
+
 /* ═══════════════════════════════════════════════════════════════
    MAIN PAGE
    ═══════════════════════════════════════════════════════════════ */
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [notices, setNotices] = useState(["discord", "orientation"]);
+
+  const dismiss = (id: string) => setNotices(n => n.filter(x => x !== id));
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 80);
@@ -971,6 +1069,43 @@ export default function Home() {
           © 2026 SNTC, IIT (BHU) · SEBI · NSDL
         </div>
       </footer>
+
+      {/* ── NOTIFICATIONS ───────────────────────────────────────── */}
+      {notices.length > 0 && (
+        <div
+          style={{
+            position: "fixed",
+            right: 20,
+            bottom: 20,
+            zIndex: 1000,
+            display: "flex",
+            flexDirection: "column",
+            gap: 12,
+            maxWidth: "calc(100vw - 40px)",
+          }}
+        >
+          {notices.includes("discord") && (
+            <Notice
+              tone="discord"
+              label="Community"
+              title="Join the SANGYAN Discord"
+              body="Ask questions, find teammates, and get updates directly from the organisers."
+              href={DISCORD_URL}
+              cta="Join Discord"
+              onClose={() => dismiss("discord")}
+            />
+          )}
+          {notices.includes("orientation") && (
+            <Notice
+              tone="maroon"
+              label="Announcement"
+              title="Physical Orientation — 1 Oct"
+              body="In-person orientation on 1 Oct 2026 at IIT (BHU), Varanasi. Teams should attend in person."
+              onClose={() => dismiss("orientation")}
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 }
