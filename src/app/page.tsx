@@ -219,7 +219,7 @@ const CRITERIA = [
 
 /* ── FAQ data ────────────────────────────────────────────────── */
 const FAQS = [
-  { q: "Who can participate?", a: "Open to all college students across India. Teams of 1–4 members." },
+  { q: "Who can participate?", a: "Open to everyone across India. Teams of 1–4 members." },
   { q: "How do I register?", a: "Registrations are live. Register your team on Unstop using the official SANGYAN listing — it takes a couple of minutes and there is no fee." },
   { q: "Is there a registration fee?", a: "No. Participation is completely free." },
   { q: "What are the prizes?", a: "1st place ₹1,00,000, 2nd place ₹50,000, and 3rd place ₹20,000. On top of cash prizes, every participant receives a certificate of participation." },
@@ -422,7 +422,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
-            style={{ display: "flex", alignItems: "center", gap: 9, padding: "12px 0", fontFamily: "var(--font-mono)", fontSize: "0.9rem", color: "var(--amber)", borderBottom: "1px solid var(--amber-border)" }}
+            style={{ display: "flex", alignItems: "center", gap: 9, padding: "12px 0", fontFamily: "var(--font-mono)", fontSize: "0.9rem", color: "#5865F2", borderBottom: "1px solid var(--amber-border)" }}
           >
             <IconDiscord size={16} />
             Join the Discord
