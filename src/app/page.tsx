@@ -960,9 +960,9 @@ export default function Home() {
           href={DISCORD_URL}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ display: "flex", alignItems: "center", gap: 9, fontFamily: "var(--font-mono)", fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)", transition: "color 0.2s" }}
-          onMouseEnter={e => (e.currentTarget.style.color = "var(--amber)")}
-          onMouseLeave={e => (e.currentTarget.style.color = "var(--white-muted)")}
+          style={{ display: "flex", alignItems: "center", gap: 9, fontFamily: "var(--font-mono)", fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#5865F2", transition: "color 0.2s" }}
+          onMouseEnter={e => (e.currentTarget.style.color = "#4752C4")}
+          onMouseLeave={e => (e.currentTarget.style.color = "#5865F2")}
         >
           <IconDiscord size={15} />
           Join the Discord
