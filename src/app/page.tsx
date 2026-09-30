@@ -373,7 +373,9 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             className="nav-link"
-            style={{ display: "inline-flex", alignItems: "center", gap: 7 }}
+            style={{ display: "inline-flex", alignItems: "center", gap: 7, color: "#5865F2" }}
+            onMouseEnter={e => (e.currentTarget.style.color = "#4752C4")}
+            onMouseLeave={e => (e.currentTarget.style.color = "#5865F2")}
           >
             <IconDiscord size={14} />
             Community
