@@ -108,6 +108,10 @@ const REGISTER_LABEL = "Register on Unstop";
 /* ── Community ──────────────────────────────────────────────── */
 const DISCORD_URL = "https://discord.gg/Q69UG3cWq";
 
+/* ── Announcement phases ─────────────────────────────────────── */
+/* 1 Oct 2026, 18:00 IST. IST is UTC+5:30, so that is 12:30 UTC. */
+const PHASE_CUTOFF = Date.UTC(2026, 9, 1, 12, 30);
+
 /* ── Ticker data ─────────────────────────────────────────────── */
 const TICKER_ITEMS = [
   { sym: "SANGYAN", val: "OPEN", chg: "LIVE NOW", dir: "up" },
@@ -194,7 +198,7 @@ const TRACKS = [
 /* ── Timeline data ───────────────────────────────────────────── */
 const TIMELINE = [
   { date: "NOW", phase: "Registration Open", desc: "Team registration is live on Unstop. Register a team of 1–4 — entry is free and every participant gets a certificate.", phase_code: "PHASE_01" },
-  { date: "30 SEP", phase: "Orientation", desc: "Teams are walked through the problem statement, tracks, and guardrails to align on scope.", phase_code: "PHASE_02" },
+  { date: "01 OCT", phase: "Orientation", desc: "In-person orientation at IIT (BHU), Varanasi, followed by the release of the official problem statement at 6 PM IST.", phase_code: "PHASE_02" },
   { date: "01–04 OCT", phase: "Build Sprint", desc: "Teams work on their solution and prepare their submission.", phase_code: "PHASE_03" },
   { date: "05 OCT", phase: "Shortlisting", desc: "Top 5–7 teams are shortlisted from all submissions.", phase_code: "PHASE_04" },
   { date: "06 OCT", phase: "Final Jury Round", desc: "Shortlisted teams present before the jury.", phase_code: "PHASE_05" },
@@ -426,9 +430,20 @@ function Notice({
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [notices, setNotices] = useState(["discord", "orientation"]);
+  const [notices, setNotices] = useState<string[]>([]);
+  const [phase, setPhase] = useState<"orientation" | "ps" | null>(null);
 
-  const dismiss = (id: string) => setNotices(n => n.filter(x => x !== id));
+  const dismiss = (id: string) => setNotices(n => [...n, id]);
+
+  /* The homepage is statically prerendered, so the current phase can only be
+     resolved in the browser. Deferred a tick to keep it off the render path,
+     and to guarantee the server and client markup agree. */
+  useEffect(() => {
+    const id = window.setTimeout(() => {
+      setPhase(Date.now() < PHASE_CUTOFF ? "orientation" : "ps");
+    }, 0);
+    return () => window.clearTimeout(id);
+  }, []);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 80);
@@ -1071,7 +1086,7 @@ export default function Home() {
       </footer>
 
       {/* ── NOTIFICATIONS ───────────────────────────────────────── */}
-      {notices.length > 0 && (
+      {notices.length < 3 && (
         <div
           style={{
             position: "fixed",
@@ -1084,7 +1099,7 @@ export default function Home() {
             maxWidth: "calc(100vw - 40px)",
           }}
         >
-          {notices.includes("discord") && (
+          {!notices.includes("discord") && (
             <Notice
               tone="discord"
               label="Community"
@@ -1095,13 +1110,24 @@ export default function Home() {
               onClose={() => dismiss("discord")}
             />
           )}
-          {notices.includes("orientation") && (
+          {phase === "orientation" && !notices.includes("orientation") && (
             <Notice
               tone="maroon"
               label="Announcement"
               title="Physical Orientation — 1 Oct"
               body="In-person orientation on 1 Oct 2026 at IIT (BHU), Varanasi. Teams should attend in person."
               onClose={() => dismiss("orientation")}
+            />
+          )}
+          {phase === "ps" && !notices.includes("ps") && (
+            <Notice
+              tone="maroon"
+              label="Problem Statement"
+              title="The Problem Statement Is Out"
+              body="The official problem statement for SANGYAN 2026 is now live. Read it before you start building."
+              href="/ps"
+              cta="Open PS"
+              onClose={() => dismiss("ps")}
             />
           )}
         </div>
