@@ -90,6 +90,12 @@ const IconWarning = ({ size = 14, color = "currentColor" }: { size?: number; col
   </svg>
 );
 
+const IconDiscord = ({ size = 14, color = "currentColor" }: { size?: number; color?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill={color} stroke="none">
+    <path d="M20.32 4.57A19.79 19.79 0 0 0 15.43 3c-.2.36-.43.84-.59 1.23a18.3 18.3 0 0 0-5.07 0A12.6 12.6 0 0 0 9.2 3a19.74 19.74 0 0 0-4.89 1.57C1.2 9.2.95 13.71 1.32 18.16a19.9 19.9 0 0 0 6.07 3.06c.49-.66.92-1.37 1.29-2.11-.71-.27-1.39-.6-2.03-.99.17-.13.34-.26.5-.4a14.2 14.2 0 0 0 12.14 0c.16.14.33.27.5.4-.64.39-1.32.72-2.03.99.37.74.8 1.45 1.29 2.11a19.86 19.86 0 0 0 6.07-3.06c.44-5.15-.75-9.6-4.83-13.59ZM8.02 15.42c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.95-2.42 2.16-2.42 1.22 0 2.19 1.09 2.17 2.42 0 1.34-.96 2.42-2.17 2.42Zm7.97 0c-1.19 0-2.16-1.08-2.16-2.42 0-1.33.95-2.42 2.16-2.42 1.22 0 2.19 1.09 2.17 2.42 0 1.34-.95 2.42-2.17 2.42Z" />
+  </svg>
+);
+
 /* ─────────────────────────────────────────────────────────────────
    SANGYAN — Financial Terminal × Brutalist Editorial
    Hackathon by SNTC, IIT (BHU) × SEBI × NSDL
@@ -98,6 +104,9 @@ const IconWarning = ({ size = 14, color = "currentColor" }: { size?: number; col
 /* ── Registration ────────────────────────────────────────────── */
 const REGISTER_URL = "https://unstop.com/p/sangyan-iit-bhu-1761145";
 const REGISTER_LABEL = "Register on Unstop";
+
+/* ── Community ──────────────────────────────────────────────── */
+const DISCORD_URL = "https://discord.gg/Q69UG3cWq";
 
 /* ── Ticker data ─────────────────────────────────────────────── */
 const TICKER_ITEMS = [
@@ -359,6 +368,16 @@ export default function Home() {
           {["About", "Tracks", "Timeline", "Prizes", "FAQ"].map(l => (
             <a key={l} href={`#${l.toLowerCase()}`} className="nav-link">{l}</a>
           ))}
+          <a
+            href={DISCORD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link"
+            style={{ display: "inline-flex", alignItems: "center", gap: 7 }}
+          >
+            <IconDiscord size={14} />
+            Community
+          </a>
         </div>
         <div style={{ marginLeft: 32, display: "flex", alignItems: "center", gap: 12 }}>
           <div className="status-pill">
@@ -396,6 +415,16 @@ export default function Home() {
               style={{ display: "block", padding: "12px 0", fontFamily: "var(--font-mono)", fontSize: "0.9rem", color: "var(--white-muted)", borderBottom: "1px solid var(--amber-border)" }}
             >{l}</a>
           ))}
+          <a
+            href={DISCORD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileOpen(false)}
+            style={{ display: "flex", alignItems: "center", gap: 9, padding: "12px 0", fontFamily: "var(--font-mono)", fontSize: "0.9rem", color: "var(--amber)", borderBottom: "1px solid var(--amber-border)" }}
+          >
+            <IconDiscord size={16} />
+            Join the Discord
+          </a>
           <a
             href={REGISTER_URL}
             target="_blank"
@@ -925,17 +954,17 @@ export default function Home() {
           <span style={{ color: "var(--amber)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.85rem" }}>[SANGYAN]</span>
           {" "}· Investor Resilience Hackathon 2026
         </div>
-        {/* <div style={{ display: "flex", gap: 24 }}>
-          {["About", "Tracks", "Timeline", "Problem Statement"].map(l => (
-            <a key={l} href={l === "Problem Statement" ? "/ps.pdf" : `#${l.toLowerCase().replace(" ", "-")}`}
-              target={l === "Problem Statement" ? "_blank" : undefined}
-              rel={l === "Problem Statement" ? "noopener" : undefined}
-              style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)", transition: "color 0.2s" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "var(--amber)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "var(--white-muted)")}
-            >{l}</a>
-          ))}
-        </div> */}
+        <a
+          href={DISCORD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "flex", alignItems: "center", gap: 9, fontFamily: "var(--font-mono)", fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--white-muted)", transition: "color 0.2s" }}
+          onMouseEnter={e => (e.currentTarget.style.color = "var(--amber)")}
+          onMouseLeave={e => (e.currentTarget.style.color = "var(--white-muted)")}
+        >
+          <IconDiscord size={15} />
+          Join the Discord
+        </a>
         <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "rgba(46,10,16,0.45)" }}>
           © 2026 SNTC, IIT (BHU) · SEBI · NSDL
         </div>
