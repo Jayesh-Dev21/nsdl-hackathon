@@ -20,7 +20,7 @@ export async function GET() {
   }
 
   try {
-    const pdf = await readFile(join(process.cwd(), "ps.pdf"));
+    const pdf = await readFile(join(process.cwd(), "Investor_Resilliance.pdf"));
     return new NextResponse(new Uint8Array(pdf), {
       headers: {
         "Content-Type": "application/pdf",
