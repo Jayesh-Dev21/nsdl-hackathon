@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "SANGYAN — Investor Resilience Hackathon | SNTC IIT (BHU) × SEBI × NSDL",
   description:
-    "SANGYAN is a national 7-day hackathon organised by SNTC, IIT (BHU) Varanasi in collaboration with SEBI and NSDL. Build technology that helps Indians become harder to fool, safer, and more resilient in their financial decisions.",
+    "SANGYAN was a national 7-day hackathon organised by SNTC, IIT (BHU) Varanasi in collaboration with SEBI and NSDL, run 01–07 October 2026. Thank you to every team that participated.",
   keywords: [
     "SANGYAN hackathon",
     "NSDL hackathon",

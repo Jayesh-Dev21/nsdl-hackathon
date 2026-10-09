@@ -101,34 +101,30 @@ const IconDiscord = ({ size = 14, color = "currentColor" }: { size?: number; col
    Hackathon by SNTC, IIT (BHU) × SEBI × NSDL
    ───────────────────────────────────────────────────────────────── */
 
-/* ── Registration ────────────────────────────────────────────── */
-const REGISTER_URL = "https://unstop.com/p/sangyan-iit-bhu-1761145";
-const REGISTER_LABEL = "Register on Unstop";
+/* ── Problem statement ───────────────────────────────────────── */
+const PS_URL = "/ps";
+const PS_LABEL = "View Problem Statement";
 
 /* ── Community ──────────────────────────────────────────────── */
 const DISCORD_URL = "https://discord.gg/Q69UG3cWq";
 
-/* ── Announcement phases ─────────────────────────────────────── */
-/* 1 Oct 2026, 18:00 IST. IST is UTC+5:30, so that is 12:30 UTC. */
-const PHASE_CUTOFF = Date.UTC(2026, 9, 1, 12, 30);
-
 /* ── Ticker data ─────────────────────────────────────────────── */
 const TICKER_ITEMS = [
-  { sym: "SANGYAN", val: "OPEN", chg: "LIVE NOW", dir: "up" },
-  { sym: "REGISTRATION", val: "OPEN", chg: "UNSTOP", dir: "up" },
-  { sym: "PRIZE.1ST", val: "₹1,00,000", chg: "WINNER", dir: "up" },
-  { sym: "PRIZE.2ND", val: "₹50,000", chg: "RUNNER-UP", dir: "up" },
-  { sym: "PRIZE.3RD", val: "₹20,000", chg: "THIRD", dir: "up" },
+  { sym: "SANGYAN", val: "CLOSED", chg: "THANK YOU", dir: "up" },
+  { sym: "HACKATHON", val: "CONCLUDED", chg: "01-07 OCT", dir: "up" },
+  { sym: "PRIZE.1ST", val: "₹1,00,000", chg: "AWARDED", dir: "up" },
+  { sym: "PRIZE.2ND", val: "₹50,000", chg: "AWARDED", dir: "up" },
+  { sym: "PRIZE.3RD", val: "₹20,000", chg: "AWARDED", dir: "up" },
   { sym: "PRIZE.POOL", val: "₹1,70,000", chg: "TOP 3", dir: "up" },
-  { sym: "CERTIFICATE", val: "ALL", chg: "EVERYONE", dir: "up" },
+  { sym: "CERTIFICATE", val: "ALL", chg: "ISSUED", dir: "up" },
   { sym: "FRAUD.INDEX", val: "₹12,000CR", chg: "DAILY LOSS", dir: "down" },
   { sym: "DEMAT.ACC", val: "16CR+", chg: "+22% YOY", dir: "up" },
   { sym: "F&O.LOSERS", val: "9/10", chg: "SEBI DATA", dir: "down" },
-  { sym: "TRACK.A", val: "FRAUD.RES", chg: "OPEN", dir: "up" },
-  { sym: "TRACK.B", val: "GRIEVANCE", chg: "OPEN", dir: "up" },
-  { sym: "TRACK.C", val: "EDU.BHARAT", chg: "OPEN", dir: "up" },
-  { sym: "TRACK.D", val: "BEH.RESIL", chg: "OPEN", dir: "up" },
-  { sym: "TRACK.E", val: "MISMATCH", chg: "OPEN", dir: "up" },
+  { sym: "TRACK.A", val: "FRAUD.RES", chg: "CLOSED", dir: "up" },
+  { sym: "TRACK.B", val: "GRIEVANCE", chg: "CLOSED", dir: "up" },
+  { sym: "TRACK.C", val: "EDU.BHARAT", chg: "CLOSED", dir: "up" },
+  { sym: "TRACK.D", val: "BEH.RESIL", chg: "CLOSED", dir: "up" },
+  { sym: "TRACK.E", val: "MISMATCH", chg: "CLOSED", dir: "up" },
   { sym: "ENTRY.FEE", val: "₹0", chg: "FREE", dir: "up" },
   { sym: "SPRINT.DAYS", val: "7 DAYS", chg: "1-4 OCT", dir: "up" },
   { sym: "TIER2/3.USR", val: "70%+", chg: "NEW DEMAT", dir: "up" },
@@ -197,19 +193,20 @@ const TRACKS = [
 
 /* ── Timeline data ───────────────────────────────────────────── */
 const TIMELINE = [
-  { date: "NOW", phase: "Registration Open", desc: "Team registration is live on Unstop. Register a team of 1–4 — entry is free and every participant gets a certificate.", phase_code: "PHASE_01" },
+  { date: "SEP 2026", phase: "Registration", desc: "Team registration ran on Unstop. Teams of 1–4 entered free, and every participant received a certificate.", phase_code: "PHASE_01" },
   { date: "01 OCT", phase: "Orientation", desc: "In-person orientation at IIT (BHU), Varanasi, followed by the release of the official problem statement at 6 PM IST.", phase_code: "PHASE_02" },
-  { date: "01–04 OCT", phase: "Build Sprint", desc: "Teams work on their solution and prepare their submission.", phase_code: "PHASE_03" },
-  { date: "05 OCT", phase: "Shortlisting", desc: "Top 5–7 teams are shortlisted from all submissions.", phase_code: "PHASE_04" },
-  { date: "06 OCT", phase: "Final Jury Round", desc: "Shortlisted teams present before the jury.", phase_code: "PHASE_05" },
-  { date: "07 OCT", phase: "Results", desc: "Top 3 teams announced, each giving a quick presentation of their work.", phase_code: "PHASE_06" },
+  { date: "01–04 OCT", phase: "Build Sprint", desc: "Teams built their solutions and prepared their submissions.", phase_code: "PHASE_03" },
+  { date: "05 OCT", phase: "Shortlisting", desc: "Top 5–7 teams were shortlisted from all submissions.", phase_code: "PHASE_04" },
+  { date: "06 OCT", phase: "Final Jury Round", desc: "Shortlisted teams presented before the jury.", phase_code: "PHASE_05" },
+  { date: "07 OCT", phase: "Results", desc: "Top 3 teams were announced, each giving a quick presentation of their work.", phase_code: "PHASE_06" },
+  { date: "NOW", phase: "Thank You", desc: "SANGYAN 2026 has concluded. Thank you to every team that registered, built, and presented.", phase_code: "PHASE_07" },
 ];
 
 /* ── Prize structure ─────────────────────────────────────────── */
 const PRIZES = [
-  { rank: "01", label: "1st Place", glyph: "◈", amount: "₹1,00,000", accent: "#7c1522", note: "Grand prize" },
-  { rank: "02", label: "2nd Place", glyph: "◇", amount: "₹50,000", accent: "#b07c1e", note: "Runner-up" },
-  { rank: "03", label: "3rd Place", glyph: "△", amount: "₹20,000", accent: "#8a6a2f", note: "Third place" },
+  { rank: "01", label: "1st Place", glyph: "◈", amount: "₹1,00,000", accent: "#7c1522", note: "Awarded" },
+  { rank: "02", label: "2nd Place", glyph: "◇", amount: "₹50,000", accent: "#b07c1e", note: "Awarded" },
+  { rank: "03", label: "3rd Place", glyph: "△", amount: "₹20,000", accent: "#8a6a2f", note: "Awarded" },
 ];
 
 /* ── Evaluation criteria ─────────────────────────────────────── */
@@ -223,15 +220,15 @@ const CRITERIA = [
 
 /* ── FAQ data ────────────────────────────────────────────────── */
 const FAQS = [
-  { q: "Who can participate?", a: "Open to everyone across India. Teams of 1–4 members." },
-  { q: "How do I register?", a: "Registrations are live. Register your team on Unstop using the official SANGYAN listing — it takes a couple of minutes and there is no fee." },
-  { q: "Is there a registration fee?", a: "No. Participation is completely free." },
-  { q: "What are the prizes?", a: "1st place ₹1,00,000, 2nd place ₹50,000, and 3rd place ₹20,000. On top of cash prizes, every participant receives a certificate of participation." },
-  { q: "Do we need financial domain expertise?", a: "No. Curiosity, empathy for the target user, and ability to build a working prototype are sufficient. The orientation session will help you align." },
-  { q: "Can we use AI/ML models and third-party APIs?", a: "Yes. Any open-source or commercially available technology is allowed. Disclose third-party components in your submission." },
-  { q: "Will all participants receive certificates?", a: "Yes. Every registered participant, winning or not, receives a certificate of participation." },
+  { q: "Who could participate?", a: "SANGYAN 2026 was open to college students across India, in teams of 1–4 members." },
+  { q: "How did registration work?", a: "Registration ran on Unstop through the official SANGYAN listing. It took a couple of minutes and there was no fee. Registrations have now closed." },
+  { q: "Was there a registration fee?", a: "No. Participation was completely free." },
+  { q: "What were the prizes?", a: "1st place ₹1,00,000, 2nd place ₹50,000, and 3rd place ₹20,000. All three were awarded, and every participant received a certificate of participation." },
+  { q: "Did teams need financial domain expertise?", a: "No. Curiosity, empathy for the target user, and the ability to build a working prototype were what mattered. The orientation session helped teams align." },
+  { q: "Were AI/ML models and third-party APIs allowed?", a: "Yes. Any open-source or commercially available technology was allowed. Third-party components were disclosed in the submission." },
+  { q: "Did all participants receive certificates?", a: "Yes. Every registered participant, winning or not, received a certificate of participation." },
   { q: "Who owns the IP of submissions?", a: "All intellectual property in submissions vests solely in NSDL upon submission, per the Terms & Conditions." },
-  { q: "What is the final presentation format?", a: "Shortlisted teams present before the jury on October 6. Top 3 teams are announced on October 7, each giving a brief demo." },
+  { q: "What was the presentation format?", a: "Shortlisted teams presented before the jury on 6 October. The top 3 teams were announced on 7 October, each giving a brief demo." },
 ];
 
 /* ═══════════════════════════════════════════════════════════════ */
@@ -430,20 +427,9 @@ function Notice({
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [notices, setNotices] = useState<string[]>([]);
-  const [phase, setPhase] = useState<"orientation" | "ps" | null>(null);
+  const [dismissed, setDismissed] = useState<string[]>([]);
 
-  const dismiss = (id: string) => setNotices(n => [...n, id]);
-
-  /* The homepage is statically prerendered, so the current phase can only be
-     resolved in the browser. Deferred a tick to keep it off the render path,
-     and to guarantee the server and client markup agree. */
-  useEffect(() => {
-    const id = window.setTimeout(() => {
-      setPhase(Date.now() < PHASE_CUTOFF ? "orientation" : "ps");
-    }, 0);
-    return () => window.clearTimeout(id);
-  }, []);
+  const dismiss = (id: string) => setDismissed(n => [...n, id]);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 80);
@@ -496,8 +482,8 @@ export default function Home() {
         </div>
         <div style={{ marginLeft: 32, display: "flex", alignItems: "center", gap: 12 }}>
           <div className="status-pill">
-            <span className="status-dot" />
-            Registrations Open
+            <span className="status-dot" style={{ background: "var(--amber)", animation: "none" }} />
+            Hackathon Complete
           </div>
           {/* <a
             href={REGISTER_URL}
@@ -541,14 +527,11 @@ export default function Home() {
             Join the Discord
           </a>
           <a
-            href={REGISTER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMobileOpen(false)}
+            href={PS_URL}
             className="btn-amber"
             style={{ marginTop: 20, justifyContent: "center", width: "100%" }}
           >
-            <span>{REGISTER_LABEL}</span>
+            <span>{PS_LABEL}</span>
             <span aria-hidden="true">↗</span>
           </a>
         </div>
@@ -616,7 +599,7 @@ export default function Home() {
             <p className="mono-body">
               Organised by <span style={{ color: "var(--amber)" }}>SNTC, IIT (BHU) Varanasi</span>
               {" "}in collaboration with <span style={{ color: "var(--amber)" }}>SEBI & NSDL.</span>
-              {" "}7-day build sprint · 5 focus tracks + 1 open track.
+              {" "}A 7-day build sprint across 5 focus tracks + 1 open track, run 01–07 October 2026.
             </p>
           </div>
 
@@ -625,23 +608,21 @@ export default function Home() {
             <div className="live-panel">
               <div className="live-panel-head">
                 <span className="status-dot" style={{ background: "var(--green)" }} />
-                <span className="mono-label" style={{ color: "var(--green)" }}>Registration / Live</span>
+                <span className="mono-label" style={{ color: "var(--green)" }}>Hackathon / Concluded</span>
                 <span className="live-panel-rule" />
-                <span className="mono-body" style={{ fontSize: "0.7rem" }}>teams of 1–4</span>
+                <span className="mono-body" style={{ fontSize: "0.7rem" }}>thank you for participating</span>
               </div>
               <div className="live-panel-body">
                 <a
-                  href={REGISTER_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={PS_URL}
                   className="btn-amber"
                   id="hero-register-btn"
                 >
-                  <span>{REGISTER_LABEL}</span>
+                  <span>{PS_LABEL}</span>
                   <span aria-hidden="true">↗</span>
                 </a>
                 <div className="live-panel-meta">
-                  <div><span className="live-panel-key">Prize pool</span><span className="live-panel-val">₹1,70,000</span></div>
+                  <div><span className="live-panel-key">Build sprint</span><span className="live-panel-val">01–04 Oct</span></div>
                   <div><span className="live-panel-key">Certificate</span><span className="live-panel-val">All participants</span></div>
                   <div><span className="live-panel-key">Entry fee</span><span className="live-panel-val">Free</span></div>
                 </div>
@@ -667,11 +648,11 @@ export default function Home() {
       <div style={{ borderTop: "1px solid var(--amber-border)", borderBottom: "1px solid var(--amber-border)" }}>
         <div style={{ maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
           {[
-            { v: "OPEN", l: "Registrations", s: "Register now" },
+            { v: "ENDED", l: "Hackathon", s: "01–04 Oct" },
             { v: "₹1.7L", l: "Prize Pool", s: "Top 3 rewarded" },
             { v: "ALL", l: "Get a Cert", s: "Every participant" },
             { v: "7", l: "Day Sprint", s: "Build period" },
-            { v: "5+1", l: "Tracks", s: "Open to all" },
+            { v: "5+1", l: "Tracks", s: "Now closed" },
             { v: "16CR+", l: "Demat Accs", s: "The scale" },
             { v: "FREE", l: "To Enter", s: "No fee" },
           ].map((s, i) => (
@@ -848,20 +829,18 @@ export default function Home() {
         <div className="cert-band">
           <div className="cert-band-icon"><IconCert size={26} color="var(--amber)" /></div>
           <div>
-            <div className="cert-band-title">EVERY participant gets a certificate</div>
+            <div className="cert-band-title">EVERY participant received a certificate</div>
             <div className="mono-body" style={{ fontSize: "0.8rem", marginTop: 6 }}>
-              Win or lose, every registered participant receives a signed certificate of participation.
-              Prizes are for the podium — recognition is for everyone who builds.
+              Win or lose, every registered participant received a signed certificate of participation.
+              Prizes were for the podium — recognition was for everyone who built.
             </div>
           </div>
           <a
-            href={REGISTER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={PS_URL}
             className="btn-outline-amber"
             style={{ flexShrink: 0, alignSelf: "center" }}
           >
-            <span>{REGISTER_LABEL}</span>
+            <span>{PS_LABEL}</span>
             <span aria-hidden="true">↗</span>
           </a>
         </div>
@@ -910,7 +889,7 @@ export default function Home() {
           {/* Submit */}
           <div>
             <div className="mono-label" style={{ marginBottom: 24 }}>08 / Submission</div>
-            <h2 className="display-md" style={{ marginBottom: 32 }}>WHAT TO<br /><span className="amber">SUBMIT</span></h2>
+            <h2 className="display-md" style={{ marginBottom: 32 }}>WHAT TEAMS<br /><span className="amber">SUBMITTED</span></h2>
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
               {[
                 ["S.01", "Product", "A working prototype demonstrating core functionality."],
@@ -1025,7 +1004,7 @@ export default function Home() {
         <div style={{ position: "relative", maxWidth: 700, margin: "0 auto" }}>
           <div className="mono-label" style={{ marginBottom: 24 }}>
             <span className="status-dot" style={{ display: "inline-block", marginRight: 8, verticalAlign: "middle" }} />
-            Registrations Open
+            SANGYAN 2026 · Concluded
           </div>
           <h2 className="display-lg" style={{ marginBottom: 24 }}>
             <span className="outline-text">MAKE INDIA</span><br />
@@ -1037,13 +1016,11 @@ export default function Home() {
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <a
-              href={REGISTER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={PS_URL}
               className="btn-amber"
               id="cta-registration-btn"
             >
-              <span>{REGISTER_LABEL}</span>
+              <span>{PS_LABEL}</span>
               <span aria-hidden="true">↗</span>
             </a>
             {/* <a href="/ps.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline-amber" id="cta-ps-btn">
@@ -1086,7 +1063,7 @@ export default function Home() {
       </footer>
 
       {/* ── NOTIFICATIONS ───────────────────────────────────────── */}
-      {notices.length < 3 && (
+      {dismissed.length < 2 && (
         <div
           style={{
             position: "fixed",
@@ -1099,35 +1076,26 @@ export default function Home() {
             maxWidth: "calc(100vw - 40px)",
           }}
         >
-          {!notices.includes("discord") && (
+          {!dismissed.includes("thanks") && (
+            <Notice
+              tone="maroon"
+              label="SANGYAN 2026"
+              title="Thank You For Participating"
+              body="The hackathon has concluded. Thank you to every team that registered, built, and presented."
+              href={PS_URL}
+              cta="Problem Statement"
+              onClose={() => dismiss("thanks")}
+            />
+          )}
+          {!dismissed.includes("discord") && (
             <Notice
               tone="discord"
               label="Community"
-              title="Join the SANGYAN Discord"
-              body="Ask questions, find teammates, and get updates directly from the organisers."
+              title="Stay Connected on Discord"
+              body="The server stays open. Keep discussing, keep building, and stay in touch with the organisers."
               href={DISCORD_URL}
               cta="Join Discord"
               onClose={() => dismiss("discord")}
-            />
-          )}
-          {phase === "orientation" && !notices.includes("orientation") && (
-            <Notice
-              tone="maroon"
-              label="Announcement"
-              title="Physical Orientation — 1 Oct"
-              body="In-person orientation on 1 Oct 2026 at IIT (BHU), Varanasi. Teams should attend in person."
-              onClose={() => dismiss("orientation")}
-            />
-          )}
-          {phase === "ps" && !notices.includes("ps") && (
-            <Notice
-              tone="maroon"
-              label="Problem Statement"
-              title="The Problem Statement Is Out"
-              body="The official problem statement for SANGYAN 2026 is now live. Read it before you start building."
-              href="/ps"
-              cta="Open PS"
-              onClose={() => dismiss("ps")}
             />
           )}
         </div>
